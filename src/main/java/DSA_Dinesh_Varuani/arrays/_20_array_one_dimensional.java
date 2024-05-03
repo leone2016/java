@@ -1,4 +1,4 @@
-package DSA_Dinesh_Varuani;
+package DSA_Dinesh_Varuani.arrays;
 
 public class _20_array_one_dimensional {
     /**

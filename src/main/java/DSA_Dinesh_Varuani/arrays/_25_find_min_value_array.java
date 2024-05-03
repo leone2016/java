@@ -1,4 +1,4 @@
-package DSA_Dinesh_Varuani;
+package DSA_Dinesh_Varuani.arrays;
 
 public class _25_find_min_value_array {
     /**

@@ -1,4 +1,4 @@
-package DSA_Dinesh_Varuani;
+package DSA_Dinesh_Varuani.arrays;
 
 public class _27_find_secondMax_value_array {
     /**
