@@ -357,6 +357,27 @@ public class SinglyLinkedList {
      * class 68
      * Q. remove loop in a linked list
      */
+    public void removeLoop() {
+        ListNode slowPtr = head;
+        ListNode fastPtr = head;
+        boolean loopExists = false;
+        while (fastPtr != null && fastPtr.next != null) {
+            slowPtr = slowPtr.next;
+            fastPtr = fastPtr.next.next;
+            if (slowPtr == fastPtr) {
+                loopExists = true;
+                break;
+            }
+        }
+        if (loopExists) {
+            ListNode temp = head;
+            while (temp.next != slowPtr.next) { // to find the starting point of the loop
+                temp = temp.next;
+                slowPtr = slowPtr.next;
+            }
+            slowPtr.next = null;
+        }
+    }
 
 
     public static void main(String[] args) {
@@ -469,6 +490,10 @@ public class SinglyLinkedList {
 
         System.out.println("\nDetect a stating point in loop in a linked list".toUpperCase());
         System.out.println("starting point: "+sll.findLoopStart().data);
+
+        System.out.println("\nRemove a loop in a linked list".toUpperCase());
+       sll.removeLoop();
+        System.out.println("Contains infinitive loop? "+sll.detectLoop());
     }
 
 }
