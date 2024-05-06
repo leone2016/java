@@ -380,18 +380,18 @@ public class SinglyLinkedList {
     }
 
     /**
-     * class 70
+     * class 70, 71
      * Q. Given two sorted single linked list, merge them so that the resulting single linked list is also sorted
      *
      * @param a -> 1 -> 3 -> 5 -> 7 -> null
      *          b -> 2 -> 4 -> 6 -> 8 -> null
      * return 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> null
      */
-    public ListNode mergeTwoSortedLists(ListNode a, ListNode b) {
+    public static ListNode mergeTwoSortedLists(ListNode a, ListNode b) {
         ListNode dummy = new ListNode(0);
         ListNode tail = dummy;
         while (a != null && b != null) {
-            if (a.data < b.data) {
+            if (a.data <= b.data) {
                 tail.next = a;
                 a = a.next;
             } else {
@@ -408,6 +408,62 @@ public class SinglyLinkedList {
         }
         return dummy.next;
     }
+
+    /**
+     * class 72
+     * Q. Given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit.
+     * Add the two numbers and return the sum as a linked list.
+     *
+     * You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+     * Example:
+     * Input: (3 -> 4 -> 2)
+     *      + (5 -> 6 -> 4)
+     * Output: 7 -> 0 -> 8
+     *
+     * Context: non-reversed order
+     *          2 -> 4 -> 3
+     *    +     4 -> 6 -> 5
+     *          ____________
+     *          7 -> 0 -> 8
+     *
+     * Example 2:
+     * Input: (7 -> 4 -> 9)
+     *     + (5 -> 6)
+     * Output: 2 -> 1 -> 0 -> 1
+     *
+     * Context: non-reversed order
+     *         9 -> 4 -> 7
+     *     +        6 -> 5
+     *     ____________
+     *     1 -> 0 -> 1 -> 2
+     */
+    public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        ListNode dummy = new ListNode(0);
+        ListNode p = l1, q = l2, current = dummy;
+        int carry = 0;
+        while (p != null || q != null) {
+            int x = (p != null) ? p.data : 0;
+            int y = (q != null) ? q.data : 0;
+            int sum = carry + x + y;
+            carry = sum / 10;
+            current.next = new ListNode(sum % 10);
+            current = current.next;
+            if (p != null) {
+                p = p.next;
+            }
+            if (q != null) {
+                q = q.next;
+            }
+        }
+        if (carry > 0) {
+            current.next = new ListNode(carry);
+        }
+        return dummy.next;
+    }
+
+
+
+
 
     public static void main(String[] args) {
         SinglyLinkedList sll = new SinglyLinkedList();
@@ -523,6 +579,41 @@ public class SinglyLinkedList {
         System.out.println("\nRemove a loop in a linked list".toUpperCase());
        sll.removeLoop();
         System.out.println("Contains infinitive loop? "+sll.detectLoop());
+
+        System.out.println("\nMerge two sorted linked list".toUpperCase());
+        SinglyLinkedList sll1 = new SinglyLinkedList();
+        sll1.head = new ListNode(1);
+
+        sll1.insertLast(3);
+        sll1.insertLast(5);
+        sll1.insertLast(7);
+        sll1.display();
+        SinglyLinkedList sll2 = new SinglyLinkedList();
+        sll2.head = new ListNode(2);
+        sll2.insertLast(4);
+        sll2.insertLast(6);
+        sll2.insertLast(8);
+        sll2.insertLast(10);
+        sll2.display();
+
+        SinglyLinkedList result = new SinglyLinkedList();
+        result.head = mergeTwoSortedLists(sll1.head, sll2.head);
+        result.display();
+
+        System.out.println("\nAdd two numbers".toUpperCase());
+        SinglyLinkedList sll3 = new SinglyLinkedList();
+        sll3.head = new ListNode(2);
+        sll3.insertLast(4);
+        sll3.insertLast(3);
+        sll3.display();
+        SinglyLinkedList sll4 = new SinglyLinkedList();
+        sll4.head = new ListNode(5);
+        sll4.insertLast(6);
+        sll4.insertLast(4);
+        sll4.display();
+        SinglyLinkedList result2 = new SinglyLinkedList();
+        result2.head = addTwoNumbers(sll3.head, sll4.head);
+        result2.display();
     }
 
 }
