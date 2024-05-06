@@ -379,6 +379,35 @@ public class SinglyLinkedList {
         }
     }
 
+    /**
+     * class 70
+     * Q. Given two sorted single linked list, merge them so that the resulting single linked list is also sorted
+     *
+     * @param a -> 1 -> 3 -> 5 -> 7 -> null
+     *          b -> 2 -> 4 -> 6 -> 8 -> null
+     * return 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> null
+     */
+    public ListNode mergeTwoSortedLists(ListNode a, ListNode b) {
+        ListNode dummy = new ListNode(0);
+        ListNode tail = dummy;
+        while (a != null && b != null) {
+            if (a.data < b.data) {
+                tail.next = a;
+                a = a.next;
+            } else {
+                tail.next = b;
+                b = b.next;
+            }
+            tail = tail.next;
+        }
+        if (a != null) {
+            tail.next = a;
+        }
+        if (b != null) {
+            tail.next = b;
+        }
+        return dummy.next;
+    }
 
     public static void main(String[] args) {
         SinglyLinkedList sll = new SinglyLinkedList();
