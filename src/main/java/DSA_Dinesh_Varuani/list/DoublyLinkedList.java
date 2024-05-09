@@ -50,6 +50,83 @@ public class DoublyLinkedList {
         dll.insertLast(30);
         dll.displayForward();
         dll.displayBackward();
+        System.out.println("\nInsert node at the beginning of a doubly linked list".toUpperCase());
+        dll.insertFirst(11);
+        dll.displayForward();
+
+        System.out.println("\nInsert node at the end of a doubly linked list".toUpperCase());
+        dll.insertLast(31);
+        dll.displayForward();
+
+        System.out.println("\nDelete first node from doubly linked list".toUpperCase());
+        dll.deleteFirst();
+        dll.displayForward();
+
+    }
+
+    /**
+     * class 78
+     * Q. How to delete the fist node from doubly linked list?
+     */
+    public ListNode deleteFirst() {
+        if (isEmpty()) {
+            throw new RuntimeException("List is empty");
+        }
+        ListNode temp = head;
+        if (head == tail) {
+            tail = null;
+        } else {
+            head.next.previous = null;
+        }
+        head = head.next;
+        temp.next = null;
+        length--;
+        return temp;
+    }
+
+    public ListNode deleteLast() {
+        if (isEmpty()) {
+            throw new RuntimeException("List is empty");
+        }
+        ListNode temp = tail;
+        if (head == tail) {
+            head = null;
+        } else {
+            tail.previous.next = null;
+        }
+        tail = tail.previous;
+        temp.previous = null;
+        length--;
+        return temp;
+    }
+    /**
+     * class 77
+     */
+    public void insertLast(int value) {
+        ListNode newNode = new ListNode(value);
+        if (isEmpty()) {
+            head = newNode;
+        } else {
+            tail.next = newNode;
+            newNode.previous = tail;
+        }
+        tail = newNode;
+        length++;
+    }
+
+    /**
+     * class 76
+     */
+    public void insertFirst(int value) {
+        ListNode newNode = new ListNode(value);
+        if (isEmpty()) {
+            tail = newNode;
+        } else {
+            head.previous = newNode;
+        }
+        newNode.next = head;
+        head = newNode;
+        length++;
     }
 
     /*
@@ -81,16 +158,6 @@ public class DoublyLinkedList {
         System.out.println("null");
     }
 
-    public void insertLast(int value) {
-        ListNode newNode = new ListNode(value);
-        if (isEmpty()) {
-            head = newNode;
-        } else {
-            tail.next = newNode;
-        }
-        newNode.previous = tail;
-        tail = newNode;
-        length++;
-    }
+
 
 }
