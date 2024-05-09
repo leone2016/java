@@ -62,6 +62,11 @@ public class DoublyLinkedList {
         dll.deleteFirst();
         dll.displayForward();
 
+        System.out.println("\nDelete last node from doubly linked list".toUpperCase());
+        dll.deleteLast();
+        dll.displayForward();
+
+
     }
 
     /**
@@ -84,6 +89,10 @@ public class DoublyLinkedList {
         return temp;
     }
 
+    /**
+     * class 79
+     * Q. How to delete the last node from doubly linked list?
+     */
     public ListNode deleteLast() {
         if (isEmpty()) {
             throw new RuntimeException("List is empty");
