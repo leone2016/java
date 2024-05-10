@@ -59,7 +59,30 @@ public class CircularSinglyLinkedLIst {
         cll.insertLast(22);
 
         cll.display();
+
+        System.out.println("\nRemove a first node from the circular linked list");
+        cll.removeFirst();
+        cll.display();
     }
+    /**
+     * class 85
+     * remove a fist node from a circular linked list
+     */
+    public ListNode removeFirst() {
+        if (isEmpty()) {
+            return null;
+        }
+        ListNode temp = last.next;
+        if (last.next == last) {
+            last = null;
+        } else {
+            last.next = temp.next;
+        }
+        temp.next = null;
+        length--;
+        return temp;
+    }
+
     /**
      * class 84
      * Insert a new node at the end of the circular linked list
