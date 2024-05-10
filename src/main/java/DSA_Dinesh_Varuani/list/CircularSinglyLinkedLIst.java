@@ -43,6 +43,71 @@ public class CircularSinglyLinkedLIst {
         length = 0;
     }
 
+    public static void main(String[] args) {
+        CircularSinglyLinkedLIst cll = new CircularSinglyLinkedLIst();
+        System.out.println("Circular Singly Linked List");
+        cll.createCircularLinkedList();
+        cll.display();
+        System.out.println("\nInsert a new node at the beginning of the circular linked list, inserting 0 at first");
+        cll.insertFirst(0);
+        System.out.println("\nLength of Circular Singly Linked List: " + cll.length());
+        cll.display();
+
+        System.out.println("\nInsert a new node at the end of the circular linked list, inserting 20 at last");
+        cll.insertLast(20);
+        cll.insertLast(21);
+        cll.insertLast(22);
+
+        cll.display();
+    }
+    /**
+     * class 84
+     * Insert a new node at the end of the circular linked list
+     */
+    public void insertLast(int data) {
+        ListNode temp = new ListNode(data);
+        if (last == null) {
+            last = temp;
+            last.next = last;
+        } else {
+            temp.next = last.next;
+            last.next = temp;
+            last = temp;
+        }
+        length++;
+    }
+
+    /**
+     * class 83
+     * Insert a new node at the beginning of the circular linked list
+     */
+    public void insertFirst(int data) {
+        ListNode temp = new ListNode(data);
+        if (last == null) {
+            last = temp;
+        } else {
+            temp.next = last.next;
+        }
+        last.next = temp;
+        length++;
+    }
+   /*
+    class 82
+    * Display the circular linked list
+     */
+
+    public void display() {
+        if (last == null) {
+            return;
+        }
+        ListNode first = last.next;
+        while (first != last) {
+            System.out.print(first.data + " --> ");
+            first = first.next;
+        }
+        System.out.print(first.data);//print last node
+    }
+
     public int length() {
         return length;
     }
@@ -64,26 +129,5 @@ public class CircularSinglyLinkedLIst {
 
         last = fourth;
     }
-    /*
-    class 82
-    * Display the circular linked list
-     */
 
-    public void display() {
-        if (last == null) {
-            return;
-        }
-        ListNode first = last.next;
-        while (first != last) {
-            System.out.print(first.data + " --> ");
-            first = first.next;
-        }
-        System.out.print(first.data);
-    }
-
-    public static void main(String[] args) {
-        CircularSinglyLinkedLIst cll = new CircularSinglyLinkedLIst();
-        cll.createCircularLinkedList();
-        cll.display();
-    }
 }
