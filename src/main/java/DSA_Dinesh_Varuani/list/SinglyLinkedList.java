@@ -15,7 +15,7 @@ public class SinglyLinkedList {
      */
     private ListNode head;
 
-    private static class ListNode {
+    public static class ListNode {
         private int data;
         private ListNode next;
 
@@ -31,7 +31,15 @@ public class SinglyLinkedList {
             }
             System.out.println("null");
         }
-
+        public void setNext(ListNode next) {
+            this.next = next;
+        }
+        public int getData() {
+            return data;
+        }
+        public ListNode getNext() {
+            return next;
+        }
     }
 
     public void display() {
