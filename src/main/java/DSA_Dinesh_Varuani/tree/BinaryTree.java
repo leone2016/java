@@ -1,6 +1,10 @@
 package DSA_Dinesh_Varuani.tree;
 
 
+import javax.swing.tree.TreeNode;
+import java.util.Stack;
+import javax.swing.tree.TreeNode;
+
 public class BinaryTree {
     private TreeNode root;
 
@@ -42,10 +46,36 @@ public class BinaryTree {
         preOrder(root.right);
     }
 
+    /**
+     * class 101
+     * PreOrder Binary Tree Traversal
+     * Visit the root node.
+     * Traverse the left subtree in PreOrder fashion.
+     * traverse the right subtree in PreOrder fashion.
+     */
+    public void preOrder() {
+        if(root == null) {
+            return;
+        }
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+        while(!stack.isEmpty()) {
+            TreeNode temp = stack.pop();
+            System.out.print(temp.data + " ");
+            if(temp.right != null) {
+                stack.push(temp.right);
+            }
+            if(temp.left != null) {
+                stack.push(temp.left);
+            }
+        }
+    }
+
     public static void main(String[] args) {
         BinaryTree bt = new BinaryTree();
         bt.createBinaryTree();
-        bt.preOrder(bt.root);
+//        bt.preOrder(bt.root);
+        bt.preOrder();
 
     }
 }
