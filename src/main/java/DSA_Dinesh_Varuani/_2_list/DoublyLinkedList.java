@@ -1,4 +1,4 @@
-package DSA_Dinesh_Varuani.list;
+package DSA_Dinesh_Varuani._2_list;
 
 /**
  * Doubly linked list

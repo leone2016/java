@@ -1,4 +1,4 @@
-package DSA_Dinesh_Varuani.stacks;
+package DSA_Dinesh_Varuani._3_stacks;
 
 import java.util.Stack;
 /**

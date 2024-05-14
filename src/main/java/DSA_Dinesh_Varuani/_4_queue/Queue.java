@@ -1,7 +1,6 @@
-package DSA_Dinesh_Varuani.queue;
+package DSA_Dinesh_Varuani._4_queue;
 
-import DSA_Dinesh_Varuani.list.SinglyLinkedList.ListNode;
-import udemy.U_lamdas.Main;
+import DSA_Dinesh_Varuani._2_list.SinglyLinkedList.ListNode;
 
 public class Queue {
     private ListNode front;

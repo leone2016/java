@@ -1,4 +1,4 @@
-package DSA_Dinesh_Varuani.stacks;
+package DSA_Dinesh_Varuani._3_stacks;
 import java.util.Stack;
 /**
  * Q. Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.

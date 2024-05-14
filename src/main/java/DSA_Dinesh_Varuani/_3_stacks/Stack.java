@@ -1,6 +1,6 @@
-package DSA_Dinesh_Varuani.stacks;
+package DSA_Dinesh_Varuani._3_stacks;
 
-import DSA_Dinesh_Varuani.list.SinglyLinkedList.ListNode;
+import DSA_Dinesh_Varuani._2_list.SinglyLinkedList.ListNode;
 
 /**
  * Representation

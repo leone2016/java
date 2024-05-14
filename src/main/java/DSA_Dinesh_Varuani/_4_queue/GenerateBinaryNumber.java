@@ -1,4 +1,4 @@
-package DSA_Dinesh_Varuani.queue;
+package DSA_Dinesh_Varuani._4_queue;
 import java.util.LinkedList;
 import java.util.Queue;
 /*

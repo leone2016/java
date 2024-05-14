@@ -1,4 +1,4 @@
-package DSA_Dinesh_Varuani.arrays;
+package DSA_Dinesh_Varuani._1_arrays;
 
 public class _23_reverse_array {
     /**

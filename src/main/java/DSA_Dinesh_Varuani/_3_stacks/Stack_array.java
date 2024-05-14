@@ -1,6 +1,4 @@
-package DSA_Dinesh_Varuani.stacks;
-
-import java.util.Stack;
+package DSA_Dinesh_Varuani._3_stacks;
 
 public class Stack_array {
     private int[] arr;
