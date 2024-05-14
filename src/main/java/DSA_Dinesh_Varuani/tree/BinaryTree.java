@@ -53,6 +53,15 @@ public class BinaryTree {
      * Traverse the left subtree in PreOrder fashion.
      * traverse the right subtree in PreOrder fashion.
      */
+    public void inOrder(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        inOrder(root.left);
+        System.out.print(root.data + " ");
+        inOrder(root.right);
+    }
+
     public void preOrder() {
         if(root == null) {
             return;
@@ -71,11 +80,24 @@ public class BinaryTree {
         }
     }
 
+    /**
+     * Class 102
+     * In order Binary tree traversal
+     *
+     * Traverse the left subtree in InOrder fashion.
+     * Visit the root node.
+     * Traverse the right subtree in InOrder fashion.
+     * @param args
+     */
+
     public static void main(String[] args) {
         BinaryTree bt = new BinaryTree();
         bt.createBinaryTree();
+        System.out.println("PREORDER");
 //        bt.preOrder(bt.root);
         bt.preOrder();
+        System.out.println("\n INORDER");
+        bt.inOrder(bt.root);
 
     }
 }
