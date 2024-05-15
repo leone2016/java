@@ -109,6 +109,23 @@ public class BinaryTree {
         }
     }
 
+    /**
+     * class 104
+     * Recursive Post order binary tree traversal
+     *
+     * traverse the left subtree in post order fashion
+     * traverse the right subtree in post order fashion
+     * visit the root node
+     */
+    public void postOrder(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        postOrder(root.left);
+        postOrder(root.right);
+        System.out.print(root.data + " ");
+    }
+
     public static void main(String[] args) {
         BinaryTree bt = new BinaryTree();
         bt.createBinaryTree();
@@ -120,5 +137,7 @@ public class BinaryTree {
         bt.inOrder(bt.root);
         System.out.println("\n ITERATIVE INORDER");
         bt.inOrder();
+        System.out.println("\n POSTORDER");
+        bt.postOrder(bt.root);
     }
 }
