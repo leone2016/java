@@ -53,15 +53,6 @@ public class BinaryTree {
      * Traverse the left subtree in PreOrder fashion.
      * traverse the right subtree in PreOrder fashion.
      */
-    public void inOrder(TreeNode root) {
-        if (root == null) {
-            return;
-        }
-        inOrder(root.left);
-        System.out.print(root.data + " ");
-        inOrder(root.right);
-    }
-
     public void preOrder() {
         if(root == null) {
             return;
@@ -87,17 +78,47 @@ public class BinaryTree {
      * Traverse the left subtree in InOrder fashion.
      * Visit the root node.
      * Traverse the right subtree in InOrder fashion.
-     * @param args
      */
+    public void inOrder(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        inOrder(root.left);
+        System.out.print(root.data + " ");
+        inOrder(root.right);
+    }
+    /**
+     * class 103
+     * Iterative InOrder Binary Tree Traversal
+     */
+    private void inOrder() {
+        if(root == null) {
+            return;
+        }
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode temp = root;
+        while(!stack.isEmpty() || temp != null) {
+            if(temp != null) {
+                stack.push(temp);
+                temp = temp.left;
+            } else {
+                temp = stack.pop();
+                System.out.print(temp.data + " ");
+                temp = temp.right;
+            }
+        }
+    }
 
     public static void main(String[] args) {
         BinaryTree bt = new BinaryTree();
         bt.createBinaryTree();
-        System.out.println("PREORDER");
-//        bt.preOrder(bt.root);
+        System.out.println("\n ITERATIVE PREORDER");
+         bt.preOrder(bt.root);
+        System.out.println("\n PREORDER");
         bt.preOrder();
         System.out.println("\n INORDER");
         bt.inOrder(bt.root);
-
+        System.out.println("\n ITERATIVE INORDER");
+        bt.inOrder();
     }
 }
