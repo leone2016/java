@@ -4,6 +4,8 @@ package DSA_Dinesh_Varuani.tree;
 import javax.swing.tree.TreeNode;
 import java.util.Stack;
 import javax.swing.tree.TreeNode;
+import java.util.Queue;
+import java.util.LinkedList;
 
 public class BinaryTree {
     private TreeNode root;
@@ -138,24 +140,46 @@ public class BinaryTree {
         if(root == null) {
             return;
         }
-        Stack<TreeNode> stack = new Stack<>();
-        TreeNode current = root;
-        while(current != null || !stack.isEmpty()) {
-            if(current != null) {
-                stack.push(current);
-                current = current.left;
+        Stack<TreeNode> stack = new Stack<>(); // to store the nodes
+        TreeNode current = root; // to traverse the tree
+        while(current != null || !stack.isEmpty()) { // loop until current is null and stack is empty
+            if(current != null) { // if current is not null
+                stack.push(current); // push the current node to stack
+                current = current.left; // move to the left of the current node
             } else {
-                TreeNode temp = stack.peek().right;
+                TreeNode temp = stack.peek().right; // get the right of the top node in stack
                 if(temp == null) {
-                    temp = stack.pop();
-                    System.out.print(temp.data + " ");
-                    while(!stack.isEmpty() && temp == stack.peek().right) {
-                        temp = stack.pop();
+                    temp = stack.pop(); // if right is null, pop the top node from stack
+                    System.out.print(temp.data + " "); // print the data of the top node
+                    while(!stack.isEmpty() && temp == stack.peek().right) { // loop until stack is empty and right of top node is equal to temp
+                        temp = stack.pop(); // pop the top node from stack
                         System.out.print(temp.data + " ");
                     }
                 } else {
                     current = temp;
                 }
+            }
+        }
+    }
+
+    /**
+     * class 107
+     * Level order traversal of a Binary Tree in Java
+     */
+    public void levelOrder() {
+        if (root == null) {
+            return;
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            TreeNode temp = queue.poll();
+            System.out.print(temp.data + " ");
+            if (temp.left != null) {
+                queue.offer(temp.left);
+            }
+            if (temp.right != null) {
+                queue.offer(temp.right);
             }
         }
     }
@@ -175,5 +199,7 @@ public class BinaryTree {
         bt.postOrder(bt.root);
         System.out.println("\n ITERATIVE POSTORDER");
         bt.postOrder();
+        System.out.println("\n LEVEL ORDER");
+        bt.levelOrder();
     }
 }
