@@ -126,6 +126,40 @@ public class BinaryTree {
         System.out.print(root.data + " ");
     }
 
+    /**
+     * class 105
+     * Iterative PostOrder Binary Tree Traversal
+     *
+     * reeinforce the concept of pre order traversal
+     * https://www.youtube.com/watch?v=uigaktgcQWU&list=PL6Zs6LgrJj3tDXv8a_elC6eT_4R5gfX4d&index=105
+     *
+     */
+    public void postOrder() {
+        if(root == null) {
+            return;
+        }
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode current = root;
+        while(current != null || !stack.isEmpty()) {
+            if(current != null) {
+                stack.push(current);
+                current = current.left;
+            } else {
+                TreeNode temp = stack.peek().right;
+                if(temp == null) {
+                    temp = stack.pop();
+                    System.out.print(temp.data + " ");
+                    while(!stack.isEmpty() && temp == stack.peek().right) {
+                        temp = stack.pop();
+                        System.out.print(temp.data + " ");
+                    }
+                } else {
+                    current = temp;
+                }
+            }
+        }
+    }
+
     public static void main(String[] args) {
         BinaryTree bt = new BinaryTree();
         bt.createBinaryTree();
@@ -139,5 +173,7 @@ public class BinaryTree {
         bt.inOrder();
         System.out.println("\n POSTORDER");
         bt.postOrder(bt.root);
+        System.out.println("\n ITERATIVE POSTORDER");
+        bt.postOrder();
     }
 }
