@@ -184,6 +184,26 @@ public class BinaryTree {
         }
     }
 
+    /**
+     * class 108
+     * How to find Maximum value in a Binary Tree? (Recursive)
+     */
+    public int findMax(TreeNode root) {
+        if (root == null) {
+            return Integer.MIN_VALUE;
+        }
+        int result = root.data;
+        int left = findMax(root.left);
+        int right = findMax(root.right);
+        if (left > result) {
+            result = left;
+        }
+        if (right > result) {
+            result = right;
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
         BinaryTree bt = new BinaryTree();
         bt.createBinaryTree();
@@ -201,5 +221,7 @@ public class BinaryTree {
         bt.postOrder();
         System.out.println("\n LEVEL ORDER");
         bt.levelOrder();
+        System.out.println("\n MAXIMUM VALUE");
+        System.out.println(bt.findMax(bt.root));
     }
 }
