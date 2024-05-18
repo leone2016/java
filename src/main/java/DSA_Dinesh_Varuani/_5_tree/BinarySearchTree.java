@@ -1,4 +1,4 @@
-package DSA_Dinesh_Varuani.tree;
+package DSA_Dinesh_Varuani._5_tree;
 
 /**
  * class 110
@@ -89,6 +89,30 @@ public class BinarySearchTree {
         } else {
             return search(root.right, key);
         }
+    }
+
+    /**
+     * class 115
+     * Leetcode: Validate Binary Search Tree
+     * Q. Given the root of a binary tree, determine if it is a valid binary search tree (BST).
+     *
+     * A binary tree is a BST if the following three conditions are satisfied:
+     * - The left subtree of a node contains only nodes with keys less than the node's key.
+     * - The right subtree of a node contains only nodes with keys greater than the node's key.
+     * - Both the left and right subtrees must also be binary search trees.
+     * 
+     */
+    public boolean isValidBST(TreeNode root) {
+        return isValidBST(root, null, null);
+    }
+    public boolean isValidBST(TreeNode root, Integer min, Integer max) {
+        if (root == null) {
+            return true;
+        }
+        if ((min != null && root.data <= min) || (max != null && root.data >= max)) {
+            return false;
+        }
+        return isValidBST(root.left, min, root.data) && isValidBST(root.right, root.data, max);
     }
 
 
