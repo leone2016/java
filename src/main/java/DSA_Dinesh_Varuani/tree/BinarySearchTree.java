@@ -29,6 +29,9 @@ public class BinarySearchTree {
         bst.insert(1);
 
         bst.inOrder();
+
+        System.out.println("\n Search 3: " + (bst.search(3) == null ? "NOT found" : "Key found"));
+        System.out.println("\n Search 23: " + (bst.search(23) == null ? "NOT found" : "Key found"))  ;
     }
 
     /**
@@ -66,5 +69,27 @@ public class BinarySearchTree {
         System.out.print(root.data + " ");
         inOrder(root.right);
     }
+    /**
+     * class 114
+     * search a given key in a Binary Search Tree (Recursive)
+     *
+     * @param value
+     */
+
+    public TreeNode search(int value) {
+        return search(root, value);
+    }
+
+    public TreeNode search(TreeNode root, int key) {
+        if (root == null || root.data == key) {
+            return root;
+        }
+        if (key < root.data) {
+            return search(root.left, key);
+        } else {
+            return search(root.right, key);
+        }
+    }
+
 
 }
