@@ -24,14 +24,17 @@ public class BinarySearchTree {
     public static void main(String[] args) {
         BinarySearchTree bst = new BinarySearchTree();
         bst.insert(5);
-        bst.insert(3);
-        bst.insert(7);
+        bst.insert(2);
+        bst.insert(6);
         bst.insert(1);
+        bst.insert(3);
 
         bst.inOrder();
 
         System.out.println("\n Search 3: " + (bst.search(3) == null ? "NOT found" : "Key found"));
         System.out.println("\n Search 23: " + (bst.search(23) == null ? "NOT found" : "Key found"))  ;
+
+        System.out.println("\n Validate BST: " + (bst.isValidBST(bst.root) ? "Valid BST" : "Not a valid BST"));
     }
 
     /**
@@ -114,6 +117,27 @@ public class BinarySearchTree {
         }
         return isValidBST(root.left, min, root.data) && isValidBST(root.right, root.data, max);
     }
+
+    /*
+     * class 117
+     * Search in a row and column wise sorted matrix
+     */
+    public boolean searchMatrix(int[][] matrix, int target) {
+        int row = 0;
+        int col = matrix[0].length - 1;
+        while (row < matrix.length && col >= 0) {
+            if (target == matrix[row][col]) {
+                return true;
+            }
+            if (target < matrix[row][col]) {
+                col--;
+            } else {
+                row++;
+            }
+        }
+        return false;
+    }
+
 
 
 }
