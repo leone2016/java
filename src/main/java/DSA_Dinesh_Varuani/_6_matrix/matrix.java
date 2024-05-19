@@ -1,4 +1,4 @@
-package DSA_Dinesh_Varuani.matrix;
+package DSA_Dinesh_Varuani._6_matrix;
 
 public class matrix {
     public static void main(String[] args) {
