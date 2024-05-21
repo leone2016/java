@@ -57,6 +57,52 @@ public class MaxPQ {
         }
     }
 
+    /**
+     * class 127
+     * https://youtu.be/w-rZONjVI0c?list=PL6Zs6LgrJj3tDXv8a_elC6eT_4R5gfX4d
+     * Complete Binary tree: A complete binary tree is a binary tree in which all levels are completely filled except possibly the last level and the last level has all keys as left as possible.
+     * Incomplete Binary tree: A binary tree in which all levels are not completely filled is called an incomplete binary tree.
+     *
+     * Top-down reheapify max heap
+     * - After deleting an element from heap. It may not satisfy above heap property. Thus, we perform top-down reheapify technique, in which we adjust the locations of elements to satisfy heap property.
+     * - In top-down reheapify, we compare the parent with its children and swap the parent with the larger child if the parent is smaller than the child.
+     * - We continue this process until the parent is greater than both its children.
+     * - The process is repeated until the heap property is satisfied.
+     */
+    /**
+     * class 128
+     * Delete max element from max heap
+     */
+    public int deleteMax() {
+        int max = heap[1];
+        swap(1, size);
+        size--;
+        sink(1);
+        heap[size + 1] = null;
+        if(size > 0 && size == (heap.length - 1) / 4) {
+            resize(heap.length / 2);
+        }
+        return max;
+    }
+    private void sink(int k) {
+        while (2 * k <= size) {
+            int j = 2 * k;
+            if (j < size && heap[j] < heap[j + 1]) {
+                j++;
+            }
+            if (heap[k] >= heap[j]) {
+                break;
+            }
+            swap(k, j);
+            k = j;
+        }
+    }
+    private void swap(int i, int j) {
+        int temp = heap[i];
+        heap[i] = heap[j];
+        heap[j] = temp;
+    }
+
 
     public static void main(String[] args) {
         MaxPQ maxPQ = new MaxPQ(3);
@@ -64,11 +110,17 @@ public class MaxPQ {
         System.out.println(maxPQ.size());
 
         System.out.println("\n Testing insert");
-        maxPQ.insert(10);
-        maxPQ.insert(20);
-        maxPQ.insert(30);
-        maxPQ.insert(40);
+        maxPQ.insert(4);
+        maxPQ.insert(3);
+        maxPQ.insert(6);
+        maxPQ.insert(2);
+        maxPQ.insert(1);
+        maxPQ.insert(5);
+        maxPQ.insert(9);
         System.out.println("Size heap: "+maxPQ.size());
+        maxPQ.printMaxHeap();
+        maxPQ.deleteMax();
+        System.out.println("\nSize heap: "+maxPQ.size());
         maxPQ.printMaxHeap();
     }
 }
