@@ -3,7 +3,7 @@ package DSA_Dinesh_Varuani._8_linearSearch;
 public class LinearSearch {
     public static void main(String[] args) {
         int[] arr = {1,10,20,47,59,63,75,88,99,107,120,133,155,162,176,188,199,200,210,222};
-        int key = 66;
+        int key = 0;
         System.out.println(linearSearch(arr, key));
         System.out.println(binarySearch(arr, key));
         System.out.println("Search insert position: " + searchInsert(arr, key));
