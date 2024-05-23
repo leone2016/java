@@ -21,4 +21,5 @@ https://www.youtube.com/watch?v=dmXvrAz8knQ&list=PL6Zs6LgrJj3tDXv8a_elC6eT_4R5gf
 https://www.youtube.com/watch?v=xIk0gEIVoZY&list=PL6Zs6LgrJj3tDXv8a_elC6eT_4R5gfX4d&index=125
 https://www.youtube.com/watch?v=VRehtixv1S8&list=PL6Zs6LgrJj3tDXv8a_elC6eT_4R5gfX4d&index=128
 https://www.youtube.com/watch?v=xSbScg7ONw8&list=PL6Zs6LgrJj3tDXv8a_elC6eT_4R5gfX4d&index=129
-134
+https://www.youtube.com/watch?v=u8moN7j6P8w&list=PL6Zs6LgrJj3tDXv8a_elC6eT_4R5gfX4d&index=139
+https://www.youtube.com/watch?v=vQ5S6rESu8w&list=PL6Zs6LgrJj3tDXv8a_elC6eT_4R5gfX4d&index=141

@@ -22,6 +22,11 @@ public class Sort {
         sort(arr2);
         System.out.println("\n  (insertion-Sort) Sorted array: ");
         printArray(arr2);
+        int[] arr3 = {5,1,2,9,10,4,6,3,8,7};
+        System.out.println("\n (selection-Sort) Sorted array: ");
+        printArray(arr3);
+        selectionSort(arr3);
+        printArray(arr3);
     }
     /**
      * Class 134
@@ -77,5 +82,30 @@ public class Sort {
     public static void printArray(int[] arr){
         Arrays.stream(arr).mapToObj(i -> i + " | ").forEach(System.out::print);
         System.out.println();
+    }
+
+    /**
+     * Class 139-140
+     * Selection sort
+     * Time complexity: O(n^2)
+     * Space complexity: O(1)
+     * - In Selection sort we divide the array into two parts sorted part and unsorted part.
+     * - The algorithm sorts an array by repeatedly finding the minimum element from unsorted part and putting it at the beginning.
+     * - from unsorted part, we pick minimun element and swap it with leftmost element of unsorted part. After swap, that element now becomes part of sorted array.
+     */
+    public static void selectionSort(int[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++) { // One by one move boundary of unsorted subarray
+            int minIndex = i;
+            for (int j = i + 1; j < n; j++) {// Find the minimum element in unsorted array
+                if (arr[j] < arr[minIndex]) {
+                    minIndex = j;
+                }
+            }
+            // swap arr[i] and arr[minIndex]
+            int temp = arr[minIndex];
+            arr[minIndex] = arr[i];
+            arr[i] = temp;
+        }
     }
 }
