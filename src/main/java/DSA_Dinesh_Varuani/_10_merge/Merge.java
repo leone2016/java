@@ -2,14 +2,15 @@ package DSA_Dinesh_Varuani._10_merge;
 
 public class Merge {
     public static void main(String[] args) {
-            int[] arr1 = {2,5,7};
-            int[] arr2 = {3,4,9};
+        int[] arr1 = {2, 5, 7};
+        int[] arr2 = {3, 4, 9};
 
-            int[] test = merge(arr1,arr2,arr1.length, arr2.length);
-            for(int i=0; i< test.length; i++){
-                System.out.print(test[i] + " | "                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                );
-            }
+        int[] test = merge(arr1, arr2, arr1.length, arr2.length);
+        for (int i = 0; i < test.length; i++) {
+            System.out.print(test[i] + " | ");
+        }
     }
+
     /**
      * class 142, 143
      * Merge two sorted arrays
@@ -29,20 +30,40 @@ public class Merge {
             }
             k++;
         }
-        while (i<n){
+        while (i < n) {
             result[k] = arr1[i];
-            i++;k++;
+            i++;
+            k++;
 
         }
-        while (j<m){
+        while (j < m) {
             result[k] = arr2[j];
-            j++; k++;
+            j++;
+            k++;
         }
         return result;
     }
+
     /**
-     * class 144
+     * class 145
      * Merge two sorted arrays
+     * <p>
+     * - Merge sort is a divede and conquer algorithm
+     * - Divide and conquer recursively breaks down a problems into two or more sub-problems of the same or related type,
+     * until these become simple enough to be solved directly. The solutions to the sub-problems are then combined
+     * to give a solution to the original problem. - Wikipedia
+     * <p>
+     * - Divide - In this step the algorithm takes middle point of array and divide the array into 2 halves. The algorithm is
+     * carried out recursively for half arrays, until there are no more half arrays to divide.
+     * - Conquer - In this step starting from the bottom, we sort and merge the divide arrays and get the sorted array
      */
+    public static void mergeSort(int[] arr, int[] temp, int low, int high) {
+        if (low < high) {
+            int mid = (low + high) / 2;
+            mergeSort(arr, temp, low, mid);
+            mergeSort(arr, temp, mid + 1, high);
+           // merge(arr, temp, low, mid, high);
+        }
+    }
 
 }
