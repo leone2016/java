@@ -62,7 +62,37 @@ public class Merge {
             int mid = (low + high) / 2;
             mergeSort(arr, temp, low, mid);
             mergeSort(arr, temp, mid + 1, high);
-           // merge(arr, temp, low, mid, high);
+            merge(arr, temp, low, mid, high);
+        }
+    }
+
+
+    public static void merge(int[] arr, int[] temp, int low, int mid, int high) {
+        for (int l = low; l <= high; l++) {
+            arr[l] = temp[l];
+        }
+        int i = low;
+        int j = mid + 1;
+        int k = low;
+        while (i <= mid && j <= high) {
+            if (arr[i] < arr[j]) {
+                temp[k] = arr[i];
+                i++;
+            } else {
+                temp[k] = arr[j];
+                j++;
+            }
+            k++;
+        }
+        while (i <= mid) {
+            temp[k] = arr[i];
+            i++;
+            k++;
+        }
+        while (j <= high) {
+            temp[k] = arr[j];
+            j++;
+            k++;
         }
     }
 
