@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class twoSum {
+public class _1_twoSum {
 
     public int[] twoSum(int[] nums, int target) {
         List<Integer> result = new ArrayList<>();
@@ -27,7 +27,7 @@ public class twoSum {
 
         int target1 = 9, target2 = 6, target3 = 6;
 
-        twoSum ts = new twoSum();
+        _1_twoSum ts = new _1_twoSum();
         int[] result1 = ts.twoSum(test1, target1);
         int[] result2 = ts.twoSum(test2, target2);
         int[] result3 = ts.twoSum(test3, target3);
@@ -36,8 +36,5 @@ public class twoSum {
         Arrays.stream(result2).forEach(System.out::print);
         System.out.println();
         Arrays.stream(result3).forEach(System.out::print);
-
-
-
     }
 }
