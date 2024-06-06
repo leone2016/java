@@ -1,24 +1,39 @@
 package leetCode;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class _1_twoSum {
 
     public int[] twoSum(int[] nums, int target) {
-        List<Integer> result = new ArrayList<>();
-        for(int i = 0; i < nums.length; i++){
-            for(int j = i+1; j < nums.length; j++){
-                if(nums[i]+nums[j] == target){
-                    result.add(i);
-                    result.add(j);
-                }
+        Map<Integer,Integer> trackMap = new HashMap<Integer, Integer>();
+        int[] retArray = new int[2];
+
+        for(int i = 0 ;i<nums.length;i++){
+            int diff = target-nums[i];
+            if(trackMap.containsKey(diff)){
+                retArray[0] = trackMap.get(diff);
+                retArray[1] = i ;
+                return retArray ;
+            }else{
+                trackMap.put(nums[i], i);
             }
         }
-
-        return result.stream().mapToInt(Integer::intValue).toArray();
+        return null ;
     }
+
+//    public int[] twoSum(int[] nums, int target) {
+//        List<Integer> result = new ArrayList<>();
+//        for(int i = 0; i < nums.length; i++){
+//            for(int j = i+1; j < nums.length; j++){
+//                if(nums[i]+nums[j] == target){
+//                    result.add(i);
+//                    result.add(j);
+//                }
+//            }
+//        }
+//
+//        return result.stream().mapToInt(Integer::intValue).toArray();
+//    }
 
     public static void main(String[] args) {
         int[] test1 = {2,  11,7, 15};
