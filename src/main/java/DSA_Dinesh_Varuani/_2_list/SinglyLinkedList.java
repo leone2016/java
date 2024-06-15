@@ -2,6 +2,157 @@ package DSA_Dinesh_Varuani._2_list;
 
 public class SinglyLinkedList {
 
+    public static void main(String[] args) {
+        SinglyLinkedList sll = new SinglyLinkedList();
+        sll.head = new ListNode(4);
+        ListNode sec = new ListNode(5);
+        ListNode trh = new ListNode(6);
+        ListNode fourt = new ListNode(7);
+        // Now we will connect them together to form a chain
+        sll.head.next = sec; // 10 --> 1
+        sec.next = trh; // 10 --> 1 --> 8
+        trh.next = fourt; // 10 --> 1 --> 8 --> 11 --> null
+
+        sll.insertFirst(3);
+        sll.insertFirst(2);
+        sll.insertFirst(1);
+
+        sll.insertLast(8);
+        sll.insertLast(9);
+        sll.insertLast(10);
+
+//        sll.insertAtPosition(15, 4);
+//        sll.insertAtPosition(16, 5);
+//        sll.insertAtPosition(12, 5);
+//        sll.insertAtPosition(16, 13);
+        sll.display();
+        System.out.println("Length of the linked list is: " + sll.length());
+
+        ListNode test = sll.deleteFirst();
+        System.out.println("\nDelete first: "+test.data);
+        System.out.println("After deleting first node");
+        sll.display();
+
+        test = sll.deleteLast();
+        System.out.println("\nDelete last: "+test.data);
+        System.out.println("After deleting last node");
+        sll.display();
+
+        System.out.println("\nDelete a node fron a Single linked list at a given position".toUpperCase());
+        test = sll.deleteAtPosition(1);
+        System.out.println("Delete at position 1: "+test.data);
+        test = sll.deleteAtPosition(3);
+        System.out.println("Delete at position 3: "+test.data);
+        sll.display();
+
+        System.out.println("\nSearch an element in a single linked list in java".toUpperCase());
+        System.out.println("Is 8 present in the list: "+sll.find(8));
+        System.out.println("Is 20 present in the list: "+sll.find(20));
+
+        System.out.println("\nReverse a single linked list in java".toUpperCase());
+        sll.display();
+        ListNode test2 = sll.reverse();
+        sll.head = test2;
+        sll.display();
+
+        System.out.println("\nFind the middle node of a single linked list in java".toUpperCase());
+        ListNode middle = sll.findMiddle();
+        sll.display();
+        System.out.println("Middle node is: "+middle.data);
+
+        System.out.println("\nFind the nth node from the end of a single linked list in java".toUpperCase());
+        sll.display();
+
+        ListNode nthNode = sll.findNthFromEnd(3);
+        System.out.println("3rd node from the end is: "+nthNode.data);
+
+        System.out.println("\nRemove duplicates from a sorted linked list".toUpperCase());
+        sll.insertAtPosition(5, 5);
+        sll.insertAtPosition(9, 2);
+        sll.insertAtPosition(3, 8);
+        sll.display();
+        sll.removeDuplicates();
+        sll.display();
+
+        System.out.println("\nReverse for test insertInSortedList".toUpperCase());
+        sll.display();
+        ListNode test3 = sll.reverse();
+        sll.head = test3;
+        sll.display();
+
+        System.out.println("\nInsert a node in a sorted linked list".toUpperCase());
+        sll.insertInSortedList(5);
+        sll.insertInSortedList(2);
+        sll.display();
+
+        System.out.println("\nDelete a node with a given key".toUpperCase());
+        sll.display();
+        ListNode test4 = sll.deleteNode(5);
+        System.out.println("After deleting node with key 5");
+        sll.display();
+        test4 = sll.deleteNode(8);
+        System.out.println("After deleting node with key 8");
+        sll.display();
+
+        System.out.println("\nDetect a loop in a linked list".toUpperCase());
+        sll.head = new ListNode(1);
+        ListNode second = new ListNode(2);
+        ListNode third = new ListNode(3);
+        ListNode fourth = new ListNode(4);
+        ListNode fifth = new ListNode(5);
+        ListNode sixth = new ListNode(6);
+        sll.head = second;
+        second.next = third;
+        third.next = fourth;
+        fourth.next = fifth;
+        fifth.next = sixth;
+        sixth.next = third;// LOOP
+        //sll.display(); // infinite loop
+        System.out.println("Contains infinitive loop? "+sll.detectLoop());
+
+        System.out.println("\nDetect a stating point in loop in a linked list".toUpperCase());
+        System.out.println("starting point: "+sll.findLoopStart().data);
+
+        System.out.println("\nRemove a loop in a linked list".toUpperCase());
+        sll.removeLoop();
+        System.out.println("Contains infinitive loop? "+sll.detectLoop());
+
+        System.out.println("\nMerge two sorted linked list".toUpperCase());
+        SinglyLinkedList sll1 = new SinglyLinkedList();
+        sll1.head = new ListNode(1);
+
+        sll1.insertLast(3);
+        sll1.insertLast(5);
+        sll1.insertLast(7);
+        sll1.display();
+        SinglyLinkedList sll2 = new SinglyLinkedList();
+        sll2.head = new ListNode(2);
+        sll2.insertLast(4);
+        sll2.insertLast(6);
+        sll2.insertLast(8);
+        sll2.insertLast(10);
+        sll2.display();
+
+        SinglyLinkedList result = new SinglyLinkedList();
+        result.head = mergeTwoSortedLists(sll1.head, sll2.head);
+        result.display();
+
+        System.out.println("\nAdd two numbers".toUpperCase());
+        SinglyLinkedList sll3 = new SinglyLinkedList();
+        sll3.head = new ListNode(2);
+        sll3.insertLast(4);
+        sll3.insertLast(3);
+        sll3.display();
+        SinglyLinkedList sll4 = new SinglyLinkedList();
+        sll4.head = new ListNode(5);
+        sll4.insertLast(6);
+        sll4.insertLast(4);
+        sll4.display();
+        SinglyLinkedList result2 = new SinglyLinkedList();
+        result2.head = addTwoNumbers(sll3.head, sll4.head);
+        result2.display();
+    }
+
     /**
      * class 36, 37, 38, 39, 40, 41, 42, 43
      * String Linked list
@@ -419,7 +570,8 @@ public class SinglyLinkedList {
 
     /**
      * class 72
-     * Q. Given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit.
+     * Q. Given two non-empty linked lists representing two non-negative integers.
+     * The digits are stored in reverse order and each of their nodes contain a single digit.
      * Add the two numbers and return the sum as a linked list.
      *
      * You may assume the two numbers do not contain any leading zero, except the number 0 itself.
@@ -469,160 +621,5 @@ public class SinglyLinkedList {
         return dummy.next;
     }
 
-
-
-
-
-
-    public static void main(String[] args) {
-        SinglyLinkedList sll = new SinglyLinkedList();
-        sll.head = new ListNode(4);
-        ListNode sec = new ListNode(5);
-        ListNode trh = new ListNode(6);
-        ListNode fourt = new ListNode(7);
-        // Now we will connect them together to form a chain
-        sll.head.next = sec; // 10 --> 1
-        sec.next = trh; // 10 --> 1 --> 8
-        trh.next = fourt; // 10 --> 1 --> 8 --> 11 --> null
-
-        sll.insertFirst(3);
-        sll.insertFirst(2);
-        sll.insertFirst(1);
-
-        sll.insertLast(8);
-        sll.insertLast(9);
-        sll.insertLast(10);
-
-//        sll.insertAtPosition(15, 4);
-//        sll.insertAtPosition(16, 5);
-//        sll.insertAtPosition(12, 5);
-//        sll.insertAtPosition(16, 13);
-        sll.display();
-        System.out.println("Length of the linked list is: " + sll.length());
-
-        ListNode test = sll.deleteFirst();
-        System.out.println("\nDelete first: "+test.data);
-        System.out.println("After deleting first node");
-        sll.display();
-
-        test = sll.deleteLast();
-        System.out.println("\nDelete last: "+test.data);
-        System.out.println("After deleting last node");
-        sll.display();
-
-        System.out.println("\nDelete a node fron a Single linked list at a given position".toUpperCase());
-        test = sll.deleteAtPosition(1);
-        System.out.println("Delete at position 1: "+test.data);
-        test = sll.deleteAtPosition(3);
-        System.out.println("Delete at position 3: "+test.data);
-        sll.display();
-
-        System.out.println("\nSearch an element in a single linked list in java".toUpperCase());
-        System.out.println("Is 8 present in the list: "+sll.find(8));
-        System.out.println("Is 20 present in the list: "+sll.find(20));
-
-        System.out.println("\nReverse a single linked list in java".toUpperCase());
-        sll.display();
-        ListNode test2 = sll.reverse();
-        sll.head = test2;
-        sll.display();
-
-        System.out.println("\nFind the middle node of a single linked list in java".toUpperCase());
-        ListNode middle = sll.findMiddle();
-        sll.display();
-        System.out.println("Middle node is: "+middle.data);
-
-        System.out.println("\nFind the nth node from the end of a single linked list in java".toUpperCase());
-        sll.display();
-
-        ListNode nthNode = sll.findNthFromEnd(3);
-        System.out.println("3rd node from the end is: "+nthNode.data);
-
-        System.out.println("\nRemove duplicates from a sorted linked list".toUpperCase());
-        sll.insertAtPosition(5, 5);
-        sll.insertAtPosition(9, 2);
-        sll.insertAtPosition(3, 8);
-        sll.display();
-        sll.removeDuplicates();
-        sll.display();
-
-        System.out.println("\nReverse for test insertInSortedList".toUpperCase());
-        sll.display();
-        ListNode test3 = sll.reverse();
-        sll.head = test3;
-        sll.display();
-
-        System.out.println("\nInsert a node in a sorted linked list".toUpperCase());
-        sll.insertInSortedList(5);
-        sll.insertInSortedList(2);
-        sll.display();
-
-        System.out.println("\nDelete a node with a given key".toUpperCase());
-        sll.display();
-        ListNode test4 = sll.deleteNode(5);
-        System.out.println("After deleting node with key 5");
-        sll.display();
-        test4 = sll.deleteNode(8);
-        System.out.println("After deleting node with key 8");
-        sll.display();
-
-        System.out.println("\nDetect a loop in a linked list".toUpperCase());
-        sll.head = new ListNode(1);
-       ListNode second = new ListNode(2);
-         ListNode third = new ListNode(3);
-        ListNode fourth = new ListNode(4);
-        ListNode fifth = new ListNode(5);
-        ListNode sixth = new ListNode(6);
-        sll.head = second;
-        second.next = third;
-        third.next = fourth;
-        fourth.next = fifth;
-        fifth.next = sixth;
-        sixth.next = third;// LOOP
-        //sll.display(); // infinite loop
-        System.out.println("Contains infinitive loop? "+sll.detectLoop());
-
-        System.out.println("\nDetect a stating point in loop in a linked list".toUpperCase());
-        System.out.println("starting point: "+sll.findLoopStart().data);
-
-        System.out.println("\nRemove a loop in a linked list".toUpperCase());
-       sll.removeLoop();
-        System.out.println("Contains infinitive loop? "+sll.detectLoop());
-
-        System.out.println("\nMerge two sorted linked list".toUpperCase());
-        SinglyLinkedList sll1 = new SinglyLinkedList();
-        sll1.head = new ListNode(1);
-
-        sll1.insertLast(3);
-        sll1.insertLast(5);
-        sll1.insertLast(7);
-        sll1.display();
-        SinglyLinkedList sll2 = new SinglyLinkedList();
-        sll2.head = new ListNode(2);
-        sll2.insertLast(4);
-        sll2.insertLast(6);
-        sll2.insertLast(8);
-        sll2.insertLast(10);
-        sll2.display();
-
-        SinglyLinkedList result = new SinglyLinkedList();
-        result.head = mergeTwoSortedLists(sll1.head, sll2.head);
-        result.display();
-
-        System.out.println("\nAdd two numbers".toUpperCase());
-        SinglyLinkedList sll3 = new SinglyLinkedList();
-        sll3.head = new ListNode(2);
-        sll3.insertLast(4);
-        sll3.insertLast(3);
-        sll3.display();
-        SinglyLinkedList sll4 = new SinglyLinkedList();
-        sll4.head = new ListNode(5);
-        sll4.insertLast(6);
-        sll4.insertLast(4);
-        sll4.display();
-        SinglyLinkedList result2 = new SinglyLinkedList();
-        result2.head = addTwoNumbers(sll3.head, sll4.head);
-        result2.display();
-    }
 
 }
