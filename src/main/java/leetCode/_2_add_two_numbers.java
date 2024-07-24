@@ -52,7 +52,10 @@ public class _2_add_two_numbers {
             l1 =  l1!=null?  l1.next: null;
             l2 =  l2!=null?  l2.next: null;
         }
-        if(carry > 0 ) tail.next = new ListNode(carry);
+        if(carry>0){
+            ListNode newNode = new ListNode(carry);
+            tail.next=newNode;
+        }
 
         return result.next;
 

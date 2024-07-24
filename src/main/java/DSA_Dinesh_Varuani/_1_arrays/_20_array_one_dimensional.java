@@ -1,5 +1,7 @@
 package DSA_Dinesh_Varuani._1_arrays;
 
+import java.util.Arrays;
+
 public class _20_array_one_dimensional {
     /**
      * What is an array?
@@ -12,9 +14,10 @@ public class _20_array_one_dimensional {
     }
 
     private static void printArray(int[] arr ) {
-        int n = arr.length;
-        for (int i = 0; i < n; i++) {
-            System.out.println(arr[i]);
-        }
+//        int n = arr.length;
+//        for (int i = 0; i < n; i++) {
+//            System.out.println(arr[i]);
+//        }
+        Arrays.stream(arr).forEach(System.out::print);
     }
 }
