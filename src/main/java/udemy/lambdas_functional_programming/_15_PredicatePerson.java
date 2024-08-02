@@ -13,12 +13,13 @@ public class _15_PredicatePerson {
     public static void main(String[] args) {
         List<Person> personList = PersonRepository.getAllPersons();
         List<Person> personFiltered = personList.stream().filter(p1.and(p2)).collect(Collectors.toList());
-
+        //alternative
         personList.forEach(person -> {
             if(p1.and(p2).test(person)){
                 System.out.println(person);
             }
         });
+
         System.out.println("==================================================================");
         personFiltered.forEach(person -> System.out.println(person));
     }
