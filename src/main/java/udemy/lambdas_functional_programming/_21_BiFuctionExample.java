@@ -27,6 +27,7 @@ public class _21_BiFuctionExample {
         System.out.println("Result :"+ bf1.apply("Java", "Features"));
         List<Person> personList = PersonRepository.getAllPersons();
         Map<String, Double> map = bf2.apply(personList, p1.and(p2));
-        System.out.println("Result :"+map);
+       // System.out.println("Result :".toLowerCase().to+map);
+
     }
 }
