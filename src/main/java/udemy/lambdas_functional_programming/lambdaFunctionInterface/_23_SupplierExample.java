@@ -12,8 +12,8 @@ public class _23_SupplierExample {
     static Supplier<List<Person>> s2 = ()->PersonRepository.getAllPersons();
     public static void main(String[] args) {
         List<Person> personList = PersonRepository.getAllPersons();
-        System.out.printf("Get Person: "+s1.get());
-        System.out.printf("Get People: "+s2.get());
+        System.out.println("Get Person: "+s1.get());
+        System.out.println("Get People: "+s2.get());
 
     }
 }
