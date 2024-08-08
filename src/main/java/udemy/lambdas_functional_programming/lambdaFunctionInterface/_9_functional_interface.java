@@ -1,4 +1,4 @@
-package udemy.lambdas_functional_programming;
+package udemy.lambdas_functional_programming.lambdaFunctionInterface;
 
 public interface  _9_functional_interface {
     public void add();

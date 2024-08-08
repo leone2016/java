@@ -1,4 +1,4 @@
-package udemy.lambdas_functional_programming;
+package udemy.lambdas_functional_programming.lambdaFunctionInterface;
 
 public class _7_runnable_basic {
     public static void main(String[] args) {

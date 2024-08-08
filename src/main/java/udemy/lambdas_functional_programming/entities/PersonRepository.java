@@ -1,7 +1,4 @@
-package udemy.lambdas_functional_programming;
-
-import udemy.lambdas_functional_programming.entities.Address;
-import udemy.lambdas_functional_programming.entities.Person;
+package udemy.lambdas_functional_programming.entities;
 
 import java.util.Arrays;
 import java.util.List;

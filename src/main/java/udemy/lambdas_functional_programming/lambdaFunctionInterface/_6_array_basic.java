@@ -1,4 +1,4 @@
-package udemy.lambdas_functional_programming;
+package udemy.lambdas_functional_programming.lambdaFunctionInterface;
 
 import java.util.ArrayList;
 import java.util.Arrays;

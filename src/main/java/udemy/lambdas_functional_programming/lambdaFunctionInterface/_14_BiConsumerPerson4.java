@@ -1,11 +1,10 @@
-package udemy.lambdas_functional_programming;
+package udemy.lambdas_functional_programming.lambdaFunctionInterface;
 
 import udemy.lambdas_functional_programming.entities.Person;
+import udemy.lambdas_functional_programming.entities.PersonRepository;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.function.BiConsumer;
-import java.util.function.Consumer;
 
 public class _14_BiConsumerPerson4 {
     static void printPersonDetails(){
