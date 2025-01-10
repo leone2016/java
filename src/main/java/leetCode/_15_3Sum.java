@@ -8,31 +8,25 @@ public class _15_3Sum {
     public List<List<Integer>> threeSum(int[] nums) {
         // List to hold the result triplets
         List<List<Integer>> result = new ArrayList<>();
-
         // Sort the array to make it easier to skip duplicates and use two pointers
         Arrays.sort(nums);
-
         // Iterate through the array, fixing one element at a time
         for (int i = 0; i < nums.length - 2; i++) {
             // Skip the same elements to avoid duplicates in the result
             if (i > 0 && nums[i] == nums[i - 1]) continue;
-
             // Two-pointer approach: initialize two pointers
             int left = i + 1;
             int right = nums.length - 1;
 
             while (left < right) {
                 int sum = nums[i] + nums[left] + nums[right];
-
                 // If the sum is zero, we've found a valid triplet
                 if (sum == 0) {
                     result.add(Arrays.asList(nums[i], nums[left], nums[right]));
-
                     // Skip duplicates for the second number
                     while (left < right && nums[left] == nums[left + 1]) left++;
                     // Skip duplicates for the third number
                     while (left < right && nums[right] == nums[right - 1]) right--;
-
                     // Move the pointers inward
                     left++;
                     right--;
