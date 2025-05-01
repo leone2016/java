@@ -5,26 +5,22 @@ import DSA_Dinesh_Varuani._2_list.SinglyLinkedList;
 import java.util.List;
 
 public class _2_add_two_numbers {
-    private  ListNode head;
+
     public static class ListNode {
         int val;
         ListNode next;
 
-        ListNode() {
-        }
-
+        ListNode() {}
         ListNode(int val) {
             this.val = val;
         }
-
         ListNode(int val, ListNode next) {
             this.val = val;
             this.next = next;
         }
-
-
     }
 
+    private  ListNode head;
     public void insertLast(int value) {
         ListNode newNode = new ListNode(value);
         if (head == null) {
@@ -33,7 +29,7 @@ public class _2_add_two_numbers {
         }
         ListNode current = head;
         // Traverse to the last node
-        while (null != current.next) {
+        while (current.next != null) {
             current = current.next;
         }
         current.next = newNode;
@@ -73,19 +69,17 @@ public class _2_add_two_numbers {
     public static  void main(String[] args) {
         _2_add_two_numbers l1 = new _2_add_two_numbers();
         l1.insertLast(2);
-        l1.insertLast(4);
+        l1.insertLast(22);
         l1.insertLast(3);
 
         _2_add_two_numbers l2 = new _2_add_two_numbers();
         l2.insertLast(5);
-        l2.insertLast(6);
+        l2.insertLast(55);
         l2.insertLast(4);
 
         display(l1.head);
         display(l2.head);
         display(addTwoNumbers(l1.head, l2.head));
-
-
 
     }
 }

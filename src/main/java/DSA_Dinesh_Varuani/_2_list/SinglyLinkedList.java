@@ -2,6 +2,46 @@ package DSA_Dinesh_Varuani._2_list;
 
 public class SinglyLinkedList {
 
+    /**
+     * class 36, 37, 38, 39, 40, 41, 42, 43
+     * String Linked list
+     *
+     * Singly linked list is a data structure used for storing collection of nodes and has the following properties:
+     *
+     *  - It contains a sequences of nodes
+     *  - A node has data and a reference to the next node in a list
+     *  - First node is head node.
+     *  - Last node has data and points to null
+     */
+    private ListNode head;
+
+    public static class ListNode {
+        private int data;
+        private ListNode next;
+
+        public ListNode(int data) {
+            this.data = data;
+            this.next = null;
+        }
+        public void display() {
+            ListNode current = next;
+            while (current != null) {
+                System.out.print(current.data + " | ");
+                current = current.next;
+            }
+            System.out.println("null");
+        }
+        public void setNext(ListNode next) {
+            this.next = next;
+        }
+        public int getData() {
+            return data;
+        }
+        public ListNode getNext() {
+            return next;
+        }
+    }
+
     public static void main(String[] args) {
         SinglyLinkedList sll = new SinglyLinkedList();
         sll.head = new ListNode(4);
@@ -153,46 +193,6 @@ public class SinglyLinkedList {
         result2.display();
     }
 
-    /**
-     * class 36, 37, 38, 39, 40, 41, 42, 43
-     * String Linked list
-     *
-     * Singly linked list is a data structure used for storing collection of nodes and has the following properties:
-     *
-     *  - It contains a sequences of nodes
-     *  - A node has data and a reference to the next node in a list
-     *  - First node is head node.
-     *  - Last node has data and points to null
-     */
-    private ListNode head;
-
-    public static class ListNode {
-        private int data;
-        private ListNode next;
-
-        public ListNode(int data) {
-            this.data = data;
-            this.next = null;
-        }
-        public void display() {
-            ListNode current = next;
-            while (current != null) {
-                System.out.print(current.data + " | ");
-                current = current.next;
-            }
-            System.out.println("null");
-        }
-        public void setNext(ListNode next) {
-            this.next = next;
-        }
-        public int getData() {
-            return data;
-        }
-        public ListNode getNext() {
-            return next;
-        }
-    }
-
     public void display() {
         ListNode current = head;
         while (current != null) {
@@ -239,7 +239,7 @@ public class SinglyLinkedList {
         }
         ListNode current = head;
         // Traverse to the last node
-        while (null != current.next) {
+        while (current.next != null ) {
             current = current.next;
         }
         current.next = newNode;
