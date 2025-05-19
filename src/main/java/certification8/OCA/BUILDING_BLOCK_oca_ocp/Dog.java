@@ -1,4 +1,4 @@
-package certification8.OCA;
+package certification8.OCA.BUILDING_BLOCK_oca_ocp;
 
 public class Dog {
     private String name = "Chip";

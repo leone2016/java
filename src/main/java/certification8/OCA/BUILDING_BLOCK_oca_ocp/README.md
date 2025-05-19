@@ -80,3 +80,97 @@ Integer a = Integer.valueOf(5); // compile
 ```
 
 ![test](../assets/img_3.png)
+
+### Identifier Rules
+- Must beging with a letter, underscore, or dollar sign
+- Can contain letters, digits, underscores, or dollar signs
+- Single underscore (_) is not allowed as an identifier
+- Cannot be a keyword or reserved word
+
+Example
+```java
+int a = 5; // compile
+int 5a = 5; // does not compile
+int a_5 = 5; // compile
+int a$5 = 5; // compile
+int a 5 = 5; // does not compile
+int a 5$ = 5; // does not compile
+int a 5_ = 5; // does not compile
+int a 5_6 = 5; // does not compile
+
+// variables accepted
+
+$myVAR12
+_$myVAR12_
+__SomeName1$_
+BIG_NAME
+_12x
+// variables not accepted
+```
+![test](../assets/img_4.png)
+
+### Naming Conventions
+- Class names should be nouns, in mixed case with the first letter of each internal word capitalized
+- Method names should be verbs, in mixed case with the first letter of each internal word capitalized
+- Variable names should be in mixed case with a lowercase first letter and the first letter of each internal word capitalized
+- Constants should be all uppercase with words separated by underscores
+- Package names should be all lowercase
+- Use meaningful names
+
+### Variables declared and/or initialized
+- in a single line (bad practice, but it compiles)
+```java
+
+int x,y;
+
+String firstName = "John", lastName = "Doe";;
+boolean v=true, w, z=false;//only w is not initialized is only declared
+```
+
+### Three kind of variables
+- local variables
+  - declared inside a method, constructor, or block
+  - only visible within that method, constructor, or block
+  - must be initialized before use
+  
+example
+```java
+//local variable must be initialized before use
+public class Test {
+    
+    public static void main(String[] args) {
+        int x; // local variable
+        System.out.println(x); // does not compile, x is not initialized
+    }
+    
+    public int doesCompile(){
+        int y = 5; // local variable
+        System.out.println(y); // compile, y is initialized
+        return y;
+    }
+    
+}
+
+// be careful if initializing in within if-statement
+
+    
+    public void doesNotCompili(boolean isOk) {
+        int x; // local variable
+        if (isOk) {
+            x = 5; // might never compile
+        }
+        System.out.println(x); // compile, x is initialized
+    }
+    
+
+```
+- instance variables
+  - declared inside a class, but outside any method, constructor, or block
+  - visible to all methods, constructors, and blocks in the class
+  - initialized when the class is instantiated
+- class variables
+  - declared with the static keyword
+  - declared inside a class, but outside any method, constructor, or block
+  - visible to all methods, constructors, and blocks in the class
+  - initialized when the class is loaded
+> instance and class variables dont require initialization, assume the default values of their type

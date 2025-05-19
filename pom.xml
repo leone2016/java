@@ -97,6 +97,10 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <source>15</source>
+                    <target>15</target>
+                </configuration>
             </plugin>
         </plugins>
     </build>
