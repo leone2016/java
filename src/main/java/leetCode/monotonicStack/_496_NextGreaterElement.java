@@ -19,7 +19,7 @@ public class _496_NextGreaterElement {
         for (int num : nums2) {
             // Maintain a decreasing stack
             while (!stack.isEmpty() && num > stack.peek()) {
-                int smaller = stack.pop();
+                Integer smaller = stack.pop();
                 nextGreaterMap.put(smaller, num); // num is the next greater for smaller
             }
             stack.push(num);
