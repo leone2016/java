@@ -1,7 +1,9 @@
-package MUI.FPP_COURSE.lec12;
+package MUI.FPP_COURSE.lesson12;
 
 import java.io.IOException;
-
+/**
+ * checked
+ */
 public class DEMO4ExceptionPropagation5 {
 	void m() throws IOException {		
 		throw new IOException("device error");	

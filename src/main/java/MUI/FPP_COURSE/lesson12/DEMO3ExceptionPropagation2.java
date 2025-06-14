@@ -1,4 +1,4 @@
-package MUI.FPP_COURSE.lec12;
+package MUI.FPP_COURSE.lesson12;
 
 public class DEMO3ExceptionPropagation2 {
     void m() {
@@ -6,11 +6,11 @@ public class DEMO3ExceptionPropagation2 {
             int data = 50 / 0;
             System.out.println(data);
         } catch (ArithmeticException e) {
-            System.out.println(e);
+            System.out.println("1. "+e);
         } finally {
-            System.out.println("Finally m()");
+            System.out.println("2. Finally m()");
         }
-        System.out.println("m method bye");
+        System.out.println("3. m method bye");
     }
 
     void n() {
@@ -24,6 +24,6 @@ public class DEMO3ExceptionPropagation2 {
     public static void main(String args[]) {
         DEMO3ExceptionPropagation2 obj = new DEMO3ExceptionPropagation2();
         obj.p();
-        System.out.println("normal flow...");
+        System.out.println("4. normal flow...");
     }
 }

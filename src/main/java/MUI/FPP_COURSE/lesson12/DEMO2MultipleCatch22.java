@@ -1,4 +1,4 @@
-package MUI.FPP_COURSE.lec12;
+package MUI.FPP_COURSE.lesson12;
 
 public class DEMO2MultipleCatch22 {
 	public static void main(String[] args) {
@@ -10,10 +10,9 @@ public class DEMO2MultipleCatch22 {
 			System.out.println("Division is " + c);
 			System.out.println(A[10]);
 			
-		}catch (ArithmeticException | IndexOutOfBoundsException| NullPointerException e) {
+		} catch (ArithmeticException | NullPointerException | IndexOutOfBoundsException e) {
 			System.out.println("error");
-		} 
-		catch (Exception e) {
+		} catch (Exception e) {
 			System.out.println("error");
 		}
 		System.out.println("Bye");

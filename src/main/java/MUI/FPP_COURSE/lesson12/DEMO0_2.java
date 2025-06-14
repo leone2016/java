@@ -1,6 +1,8 @@
-package MUI.FPP_COURSE.lec12;
-
-public class DEMO0_0 {
+package MUI.FPP_COURSE.lesson12;
+/**
+ * checked
+ */
+public class DEMO0_2 {
 
 	public static void main(String[] args) {
 		int a = 5, b = 0, c;
@@ -11,7 +13,9 @@ public class DEMO0_0 {
 		catch(Exception e) {
 			System.out.println(e);
 		}
-		
+		finally{
+			System.out.println("Finally");
+		}
 		System.out.println("Bye");
 	}
 

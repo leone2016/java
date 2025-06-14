@@ -12,14 +12,15 @@ public class Main {
 		Person p = new Person("Joe", "Smith", 100000, new GregorianCalendar(1988, 5, 5));
 		System.out.println(p.toString());
 		System.out.printf("TO HEX STRING: %h\n",Integer.toHexString(p.hashCode()));
-		System.out.printf("HASHCODE: %d\n",p.hashCode());
+		System.out.printf("HASHCODE: %d\n\n\n",p.hashCode());
 		
 		
 		Person p1 = new Person("Joe", "Smith", 100000, new GregorianCalendar(1988, 5, 5));
 		System.out.println(p1.toString());
-		System.out.println(Integer.toHexString(p1.hashCode()));
-		System.out.println(p.equals(p1));
-		
+		System.out.printf("TO HEX STRING: %h\n",Integer.toHexString(p1.hashCode()));
+		System.out.printf("HASHCODE: %d\n",p1.hashCode());
+
+
 	}
 
 }

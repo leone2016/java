@@ -1,7 +1,9 @@
-package MUI.FPP_COURSE.lec12;
+package MUI.FPP_COURSE.lesson12;
 
 import java.io.IOException;
-
+/**
+ * checked
+ */
 public class DEMO08ThrowThrowsDemo {
 	static int area(int l, int b) throws NegativeDimensionException {
 		if (l < 0 || b < 0)

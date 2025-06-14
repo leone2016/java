@@ -1,7 +1,9 @@
-package MUI.FPP_COURSE.lec12;
+package MUI.FPP_COURSE.lesson12;
 
 import java.util.Scanner;
-
+/**
+ * checked
+ */
 public class DEMO5TryWithResource2 {
 
     public static void main(String[] args) throws Exception {

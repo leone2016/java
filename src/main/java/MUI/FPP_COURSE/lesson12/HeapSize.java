@@ -1,4 +1,4 @@
-package MUI.FPP_COURSE.lec12;
+package MUI.FPP_COURSE.lesson12;
 
 public class HeapSize {
     public static void main(String[] args) {

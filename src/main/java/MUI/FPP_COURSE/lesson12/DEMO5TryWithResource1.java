@@ -1,6 +1,7 @@
-package MUI.FPP_COURSE.lec12;
+package MUI.FPP_COURSE.lesson12;
 
 import java.util.Scanner;
+
 
 public class DEMO5TryWithResource1 {
 

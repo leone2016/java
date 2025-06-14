@@ -1,4 +1,4 @@
-package MUI.FPP_COURSE.lec12;
+package MUI.FPP_COURSE.lesson12;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -15,7 +15,7 @@ public class DEMO06CheckedException2 {
             }
             input1.close();
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            System.out.println("MESSAGE ERROR HANDLING:"+e.getMessage());
             e.printStackTrace();
         }
 

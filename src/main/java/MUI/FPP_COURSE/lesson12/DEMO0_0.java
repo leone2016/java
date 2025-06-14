@@ -1,6 +1,6 @@
-package MUI.FPP_COURSE.lec12;
+package MUI.FPP_COURSE.lesson12;
 
-public class DEMO0_2 {
+public class DEMO0_0 {
 
 	public static void main(String[] args) {
 		int a = 5, b = 0, c;
@@ -11,10 +11,8 @@ public class DEMO0_2 {
 		catch(Exception e) {
 			System.out.println(e);
 		}
-		finally{
-			System.out.println("Finally");
-		}
-		System.out.println("Bye");
+		
+		System.out.println("Bye Leo");
 	}
 
 }

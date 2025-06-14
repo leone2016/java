@@ -1,5 +1,8 @@
-package MUI.FPP_COURSE.lec12;
+package MUI.FPP_COURSE.lesson12;
 
+/**
+ * checked
+ */
 public class DEMO0_1 {
 
 	public static void main(String[] args) {

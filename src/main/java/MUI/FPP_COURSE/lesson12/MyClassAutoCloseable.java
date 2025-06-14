@@ -1,4 +1,4 @@
-package MUI.FPP_COURSE.lec12;
+package MUI.FPP_COURSE.lesson12;
 
 public class MyClassAutoCloseable implements AutoCloseable{
     private int num = 5;

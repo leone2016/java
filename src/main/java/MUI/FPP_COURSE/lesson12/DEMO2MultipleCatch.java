@@ -1,11 +1,13 @@
-package MUI.FPP_COURSE.lec12;
-
+package MUI.FPP_COURSE.lesson12;
+/**
+ * checked
+ */
 public class DEMO2MultipleCatch {
 	public static void main(String[] args) {
 		int A[]  = { 30, 20, 0, 0, 40 };
 		String s = null;
 		try {
-//			s.length();//
+			//s.length();//
 			int c = A[0] / A[0];
 			
 			System.out.println("Division is " + c);
@@ -16,11 +18,11 @@ public class DEMO2MultipleCatch {
 			System.out.println("Denominator should not be 0");
 		}
 		catch (ArrayIndexOutOfBoundsException e) { //sub
-			System.out.println("Index is Invalid");
+			System.out.println("Index is Invalid (sub)");
 		}
 		catch (IndexOutOfBoundsException e) { //super
 			System.out.println("Index is Invalid super");
-		} 		
+		}
 		catch (Exception e) { //super
 			System.out.println("Null pointer");
 		}

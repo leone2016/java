@@ -1,9 +1,11 @@
-package MUI.FPP_COURSE.lec12;
-
+package MUI.FPP_COURSE.lesson12;
+/**
+ * checked
+ */
 public class DEMO3ExceptionPropagation3 {
-    int m() {
+        int m() {
         try {
-            int data = 50 / 10;
+            int data = 50 / 0;
             return data;
         } catch (ArithmeticException e) {
             System.out.println(e);
