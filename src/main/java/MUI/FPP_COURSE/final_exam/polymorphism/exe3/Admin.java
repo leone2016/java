@@ -1,16 +1,17 @@
 package MUI.FPP_COURSE.final_exam.polymorphism.exe3;
 
-import java.util.List;
-
+import java.util.*;
 public class Admin {
-	public static List/*<implement>*/ convertArray(Object[] studentArray) {
-		/* implement */
-		return null;
+	public static List<Student> convertArray(Student[] studentArray) {
+        return new ArrayList<>(Arrays.asList(studentArray));
 	}
 	
 	
-	public static double computeAverageGpa(List/*<implement>*/ studentList) {
-		/*implement */
-		return 0.0;
+	public static double computeAverageGpa(List<Student> studentList) {
+		double averageGpa = 0;
+		for (Student student : studentList) {
+			averageGpa+= student.computeGpa();
+		}
+		return averageGpa/studentList.size();
 	}
 }

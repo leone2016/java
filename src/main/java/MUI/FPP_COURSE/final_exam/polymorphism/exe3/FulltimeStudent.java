@@ -3,13 +3,14 @@ package MUI.FPP_COURSE.final_exam.polymorphism.exe3;
 import java.util.List;
 
 public class FulltimeStudent extends Student {
-	private String name;
+/*	private String name;*/
 	private FulltimeTranscriptRecord record;
 	public FulltimeStudent(String name, FulltimeTranscriptRecord record) {
-		this.name = name;
+		super(name);
 		this.record = record;
 	}
-	
+
+	@Override
 	public double computeGpa() {
 		List<Double> fallGrades = record.getFallTranscript().getRecord();
 		List<Double> springGrades = record.getSpringTranscript().getRecord();
@@ -23,18 +24,19 @@ public class FulltimeStudent extends Student {
 		}
 		return sum / (fallGrades.size() + springGrades.size());
 	}
-	public String getName() {
+
+	/*public String getName() {
 		return name;
-	}
+	}*/
 	
-	public boolean equals(Object ob) {
+/*	public boolean equals(Object ob) {
 		if(ob == null) return false;
 		if(!(ob instanceof FulltimeStudent)) return false;
 		FulltimeStudent fts = (FulltimeStudent)ob;
 		return name.equals(fts.name);
-	}
+	}*/
 	
-	public String toString() {
+	/*public String toString() {
 		return name;
-	}
+	}*/
 }

@@ -10,17 +10,35 @@ public class Main {
 		FulltimeTranscriptRecord ftr3 = new FulltimeTranscriptRecord();
 		
 		SemesterTranscript st1 = new SemesterTranscript();
-		st1.insertGrade(3.1);st1.insertGrade(2.8);st1.insertGrade(3.8);st1.insertGrade(4.0);
+		st1.insertGrade(3.1);
+		st1.insertGrade(2.8);
+		st1.insertGrade(3.8);
+		st1.insertGrade(4.0);
 		SemesterTranscript st2 = new SemesterTranscript();
-		st2.insertGrade(3.3);st2.insertGrade(3.8);st2.insertGrade(2.8);st2.insertGrade(3.0);
+		st2.insertGrade(3.3);
+		st2.insertGrade(3.8);
+		st2.insertGrade(2.8);
+		st2.insertGrade(3.0);
 		SemesterTranscript st3 = new SemesterTranscript();
-		st3.insertGrade(3.3);st3.insertGrade(3.8);st3.insertGrade(2.8);st3.insertGrade(3.0);
+		st3.insertGrade(3.3);
+		st3.insertGrade(3.8);
+		st3.insertGrade(2.8);
+		st3.insertGrade(3.0);
 		SemesterTranscript st4 = new SemesterTranscript();
-		st4.insertGrade(3.3);st4.insertGrade(3.8);st4.insertGrade(2.8);st4.insertGrade(3.0);
+		st4.insertGrade(3.3);
+		st4.insertGrade(3.8);
+		st4.insertGrade(2.8);
+		st4.insertGrade(3.0);
 		SemesterTranscript st5 = new SemesterTranscript();
-		st5.insertGrade(3.3);st5.insertGrade(3.8);st5.insertGrade(2.8);st5.insertGrade(3.0);
+		st5.insertGrade(3.3);
+		st5.insertGrade(3.8);
+		st5.insertGrade(2.8);
+		st5.insertGrade(3.0);
 		SemesterTranscript st6 = new SemesterTranscript();
-		st6.insertGrade(3.3);st6.insertGrade(3.8);st6.insertGrade(2.8);st6.insertGrade(3.0);
+		st6.insertGrade(3.3);
+		st6.insertGrade(3.8);
+		st6.insertGrade(2.8);
+		st6.insertGrade(3.0);
 		
 		ftr1.setFallTranscript(st1);
 		ftr1.setSpringTranscript(st2);
@@ -30,11 +48,17 @@ public class Main {
 		ftr3.setSpringTranscript(st6);
 		
 		ParttimeTranscriptRecord ptr1 = new ParttimeTranscriptRecord();
-		ptr1.insertGrade(1.8);ptr1.insertGrade(2.7);ptr1.insertGrade(3.1);
+		ptr1.insertGrade(1.8);
+		ptr1.insertGrade(2.7);
+		ptr1.insertGrade(3.1);
 		ParttimeTranscriptRecord ptr2 = new ParttimeTranscriptRecord();
-		ptr2.insertGrade(3.8);ptr2.insertGrade(3.7);
+		ptr2.insertGrade(3.8);
+		ptr2.insertGrade(3.7);
 		ParttimeTranscriptRecord ptr3 = new ParttimeTranscriptRecord();
-		ptr3.insertGrade(2.3);ptr3.insertGrade(2.7);ptr3.insertGrade(2.1);ptr3.insertGrade(3.9);
+		ptr3.insertGrade(2.3);
+		ptr3.insertGrade(2.7);
+		ptr3.insertGrade(2.1);
+		ptr3.insertGrade(3.9);
 		
 		FulltimeStudent fts1 = new FulltimeStudent("Bob", ftr1);
 		FulltimeStudent fts2 = new FulltimeStudent("Alice", ftr2);
@@ -45,8 +69,8 @@ public class Main {
 		ParttimeStudent pts3 = new ParttimeStudent("Steve", ptr3);
 		
 		
-		Object[] students = {fts1, fts2, fts3, pts1, pts2, pts3};
-		List/*<implement>*/ studentList = Admin.convertArray(students);
+		Student[] students = {fts1, fts2, fts3, pts1, pts2, pts3};
+		List<Student> studentList = Admin.convertArray(students);
 		double averageGpa = Admin.computeAverageGpa(studentList);
 		
 		//Expected average GPA is 3.1347222222222224
