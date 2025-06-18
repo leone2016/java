@@ -24,8 +24,8 @@ public class Main {
 		
 		Employee george = new Employee("George", 2000, 10, 18);
 		
-		System.out.println("Is george in the empList? " + empList.contains(george));
-		System.out.println("Is george in the treeSet? " + tree.contains(george));
+		System.out.println("Is george in the empList? " + empList.contains(george));//call equals method inside Employee class
+		System.out.println("Is george in the treeSet? " + tree.contains(george));// call compare method inside NameComparator1
 
 	}
 }
