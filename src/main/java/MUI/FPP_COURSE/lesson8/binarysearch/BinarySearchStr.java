@@ -1,4 +1,4 @@
-package MUI.FPP_COURSE.lesson7.binarysearch;
+package MUI.FPP_COURSE.lesson8.binarysearch;
 
 /**
  * Searches for value in a sorted string

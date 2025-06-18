@@ -1,8 +1,6 @@
-package MUI.FPP_COURSE.lesson7.comparator_example;
+package MUI.FPP_COURSE.lesson8.comparator_example;
 
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.Date;
 
 public class Main {
 	public static void main(String[] args) {

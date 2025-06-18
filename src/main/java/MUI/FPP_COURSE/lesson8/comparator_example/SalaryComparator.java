@@ -1,4 +1,4 @@
-package MUI.FPP_COURSE.lesson7.comparator_example;
+package MUI.FPP_COURSE.lesson8.comparator_example;
 
 import java.util.Comparator;
 

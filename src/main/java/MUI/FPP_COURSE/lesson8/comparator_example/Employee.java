@@ -1,7 +1,4 @@
-package MUI.FPP_COURSE.lesson7.comparator_example;
-
-import java.util.Date;
-import java.util.GregorianCalendar;
+package MUI.FPP_COURSE.lesson8.comparator_example;
 
 public class Employee  {
 	private String name;
