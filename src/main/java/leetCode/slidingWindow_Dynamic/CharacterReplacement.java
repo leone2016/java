@@ -4,34 +4,33 @@ public class CharacterReplacement {
 
     public static int characterReplacement(String s, int k) {
         int[] count = new int[26]; // For uppercase A-Z
-        int left = 0, maxCount = 0, maxLength = 0;
+        int left = 0, maxCount = 0, maxWindow = 0;
 
         for (int right = 0; right < s.length(); right++) {
-            count[s.charAt(right) - 'A']++;
-            maxCount = Math.max(maxCount, count[s.charAt(right) - 'A']);
+            int idx = s.charAt(right) - 'A';
+            count[idx]++;
+            maxCount = Math.max(maxCount, count[idx]);
 
             // If window is invalid, shrink it
-            int test = right - left + 1;
-            int win  =  (test) - maxCount;
-            while (win > k) {
+            while ((right - left + 1) - maxCount > k) {
                 count[s.charAt(left) - 'A']--;
                 left++;
             }
 
             // Update the maxLength if this window is valid
-            maxLength = Math.max(maxLength, right - left + 1);
+            maxWindow = Math.max(maxWindow, right - left + 1);
         }
 
-        return maxLength;
+        return maxWindow;
     }
 
     public static void main(String[] args) {
-        String s1 = "ABAB";
-        int k1 = 2;
-        System.out.println("Input: " + s1 + ", k = " + k1);
-        System.out.println("Output: " + characterReplacement(s1, k1)); // 4
+//        String s1 = "ABAB";
+//        int k1 = 2;
+//        System.out.println("Input: " + s1 + ", k = " + k1);
+//        System.out.println("Output: " + characterReplacement(s1, k1)); // 4
 
-        String s2 = "AABABBA";
+        String s2 = "ABBABBA";
         int k2 = 1;
         System.out.println("Input: " + s2 + ", k = " + k2);
         System.out.println("Output: " + characterReplacement(s2, k2)); // 4

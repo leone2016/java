@@ -13,10 +13,10 @@ public class _1_Basic {
         }
         System.out.println("Total: " + total);
         System.out.println("AFTER java 8");
-        int total2 = IntStream.rangeClosed(0,50)
-                .map(Integer :: new)
-                .sum();
-
-        System.out.println("Total2: " + total2);
+//        int total2 = IntStream.rangeClosed(0,50)
+//                .mapToLong(Long::intValue)
+//                .sum();
+//
+//        System.out.println("Total2: " + total2);
     }
 }
