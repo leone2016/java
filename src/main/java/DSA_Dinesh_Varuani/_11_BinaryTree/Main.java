@@ -11,9 +11,11 @@ public class Main {
         TreeNode<Integer> third = new TreeNode<>(3);
         TreeNode<Integer> four = new TreeNode<>(4);
         TreeNode<Integer> five = new TreeNode<>(5);
+        TreeNode<Integer> six = new TreeNode<>(3);
         root = first;
         first.setLeft(sec);
         first.setRight(third);
+        third.setLeft(six);
         sec.setLeft(four);
         sec.setRight(five);
 
@@ -24,6 +26,8 @@ public class Main {
         System.out.println("");
         System.out.println("Inorder Traversal:");
         inOrderRecursion(root);
+        System.out.println("");
+        inOrderIterative(root);
     }
 
 

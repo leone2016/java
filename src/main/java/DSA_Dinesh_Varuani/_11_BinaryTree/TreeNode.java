@@ -90,11 +90,12 @@ public class TreeNode<T> {
                 stack.push(current);
                 current = current.left;
             } else {
-                if (stack.isEmpty()) break;
+             current = stack.pop();
+             System.out.printf(" %d |", current.data);
+             current = current.right;
             }
-            current = stack.pop();
-            System.out.printf(" %d |", current.data);
-            current = current.right;
+
         }
     }
+
 }
