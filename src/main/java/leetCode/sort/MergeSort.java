@@ -12,21 +12,14 @@ public class MergeSort {
      * @param upper The ending index of the sub-array.
      */
     public static void mergeSort(int[] A, int lower, int upper) {
-        // Base case: If the sub-array has one or zero elements, it's already sorted.
-        if (lower >= upper) {
-            return;
-        }
+        if (lower >= upper)return;
 
-        // Find the midpoint to divide the array into two halves.
         int mid = lower + (upper - lower) / 2;
 
-        // Recursively sort the left half.
         mergeSort(A, lower, mid);
 
-        // Recursively sort the right half.
         mergeSort(A, mid + 1, upper);
 
-        // Merge the two sorted halves.
         merge(A, lower, mid, upper);
     }
 
