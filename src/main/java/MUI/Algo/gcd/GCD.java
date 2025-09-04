@@ -1,5 +1,8 @@
 package MUI.Algo.gcd;
 
+/**
+ * Greatest common factor
+ */
 public class GCD {
 
     static int gcd(int a, int b) {
