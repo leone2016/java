@@ -8,8 +8,26 @@ public class practice3 {
         int n = 5, start = 5;
         int [][] mat = genM2(n, start);
         print(mat);
-        var test = DACsearchSS(mat, 23);
-        System.out.println("RESULT: " + Arrays.toString(test));
+        var test = searchSS(mat, 34);
+        System.out.println("RESULT: " + test);
+    }
+
+
+
+    public static String searchSS(int[][] mat, int k){
+        int n = mat[0].length;
+        int i = 0;
+        int j = n-1;
+        if(mat[0][0]< k && mat[j][j] < k) return "Not Found, out of range";
+        while(i < n && j >= 0 ){
+
+            if(mat[i][j] == k){ return String.format("%d, %d", i,j); }
+            if(mat[i][j] < k)
+                i++;
+            else
+                j--;
+        }
+        return "Not Found";
     }
 
     public static int[][] genM2(int n, int start) {
