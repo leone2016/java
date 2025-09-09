@@ -3,13 +3,13 @@ package MUI.Algo;
 import java.util.ArrayList;
 import java.util.List;
 
-class OneSubSet{
-    int[] val;
-
-    public OneSubSet(int[] val) {
-        this.val = val;
-    }
-}
+//class OneSubSet{
+//    int[] val;
+//
+//    public OneSubSet(int[] val) {
+//        this.val = val;
+//    }
+//}
 public class practice4 {
 
     /**
@@ -55,6 +55,20 @@ public class practice4 {
 
         return dp[n][target];
     }
+    public static boolean isSubsetSumOptimized(int[] nums, int target) {
+        boolean[] dp = new boolean[target + 1];
+        dp[0] = true;
+
+        for (int num : nums) {
+            // Iterate backward to avoid using the same element multiple times
+            // within the same outer loop iteration.
+            for (int j = target; j >= num; j--) {
+                dp[j] = dp[j] || dp[j - num];
+            }
+        }
+
+        return dp[target];
+    }
 
     public static String subSutSumOneSolution(int[] nums, int target){
         int n = nums.length;
@@ -96,6 +110,7 @@ public class practice4 {
         int target = 8;
 
         System.out.println("DP Result TRUE FALSE: " + (isSubsetSum(nums, target) ? "True" : "False"));
+        System.out.println("DP Result TRUE FALSE (OPTIMIZED): " + (isSubsetSumOptimized(nums, target) ? "True" : "False"));
 
         String s = subSutSumOneSolution(nums, target);
         System.out.println("DP Result TRUE FALSE: "+s);

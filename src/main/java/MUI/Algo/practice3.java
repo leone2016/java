@@ -69,7 +69,7 @@ public class practice3 {
 
         int cMid = (c1 + c2) / 2;
 
-        // Binary search en la columna cMid
+        // Binary search in cMid column
         int lo = r1, hi = r2;
         while (lo <= hi) {
             int mid = (lo + hi) / 2;
@@ -78,14 +78,14 @@ public class practice3 {
             if (midVal < key) lo = mid + 1;
             else hi = mid - 1;
         }
-        int splitRow = lo; // primera fila con valor > key en cMid
+        int splitRow = lo;
 
-        // Dos submatrices posibles:
-        // 1) arriba-derecha
+        // 2 possible matrix
+        // 1) up-right
         int[] res = dac(a, r1, cMid + 1, splitRow - 1, c2, key);
         if (res != null) return res;
 
-        // 2) abajo-izquierda
+        // 2) down-left
         return dac(a, splitRow, c1, r2, cMid - 1, key);
     }
 
