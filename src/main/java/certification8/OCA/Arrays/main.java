@@ -108,6 +108,38 @@ public class main {
         String[] arr2 = {"Jhown", "Jane", "Jackson"};
         System.out.println("mismatch index: "+ Arrays.mismatch(arr1, arr2)); // 2
 
+        System.out.println("---------------------------------------------");
+        System.out.println("""
+                
+                
+                
+                MULTIDIMENSIONAL ARRAYS
+                
+                """);
+
+        int[][] multi = {
+                {-1,17},
+                {3,5},
+                {9,11,13},
+                {4,9,-6,7}
+        };
+
+        System.out.println("multi.length: "+ multi.length); // 4
+        System.out.println("multi[2].length: "+ multi[2].length); //
+        System.out.println("Accessing element: multi[3][2]: "+ multi[3][2]); // -6
+        for(int[] array : multi){
+            System.out.println("Array: "+ Arrays.toString(array));
+
+        }
+        // access elements with for-each loop (no control over indices)
+        for(int i=0; i< multi.length; i++){
+            for(int j=0; j< multi[i].length; j++) {
+                System.out.print(multi[i][j] + " ");
+            }
+        }
+
+
+
 
 
 
