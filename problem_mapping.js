@@ -176,7 +176,7 @@ problem_mapping = {
                 "total": 1001
             },
             "Java: EvenOddArray.java": {
-                "passed": 0,
+                "passed": 1,
                 "total": 1001
             },
             "Python: even_odd_array.py": {
