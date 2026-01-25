@@ -1,4 +1,4 @@
-package certification8.module_1;
+package certification.module_1;
 
 public class Shop {
     /**

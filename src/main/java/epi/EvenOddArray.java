@@ -32,6 +32,7 @@ public class EvenOddArray {
       nextFast++;
     }
     System.out.println("FIN");
+
   }
   @EpiTest(testDataFile = "even_odd_array.tsv")
   public static void evenOddWrapper(TimedExecutor executor, List<Integer> A)

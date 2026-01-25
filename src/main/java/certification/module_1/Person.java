@@ -1,4 +1,4 @@
-package certification8.module_1;
+package certification.module_1;
 
 /**
  * una clase es un tipo de dato que puede contener atributos (variables) y métodos (funciones)

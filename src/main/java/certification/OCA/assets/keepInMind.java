@@ -1,4 +1,4 @@
-package certification8.OCA.assets;
+package certification.OCA.assets;
 
 public class keepInMind {
     public static void main(String[] args) {

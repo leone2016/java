@@ -1,4 +1,4 @@
-package certification8.OCA.Arrays;
+package certification.OCA.Arrays;
 
 import java.util.Arrays;
 
