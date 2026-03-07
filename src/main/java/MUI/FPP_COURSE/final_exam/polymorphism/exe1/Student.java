@@ -1,6 +1,6 @@
 package MUI.FPP_COURSE.final_exam.polymorphism.exe1;
 
-public class Student {
+public class Student extends LibraryMember{
 	private String name;
 	private String studentId;
 	private CheckoutRecord record;
@@ -24,4 +24,9 @@ public class Student {
 	public String toString() {
 		return "{Name: " + name + "Overdue: " + record.getOverdueBooks() + "}";
 	}
+
+//	@Override
+//	public void display() {
+//		System.out.println("I am a student");
+//	}
 }
