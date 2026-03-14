@@ -19,6 +19,9 @@ public class Employee {
         this.active = active;
     }
 
+    public int getId() {
+        return id;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -78,5 +81,73 @@ public class Employee {
     @Override
     public int hashCode() {
       return Objects.hash(id, firstName, lastName, department, salary, active);
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", department='" + department + '\'' +
+                ", salary=" + salary +
+                ", active=" + active +
+                '}';
+    }
+}
+
+
+class EmployeeDTO{
+    private int id;
+    private String fullName;
+    private String department;
+    private double salary;
+
+    public EmployeeDTO(int id, String fullName, String department, double salary) {
+        this.id = id;
+        this.fullName = fullName;
+        this.department = department;
+        this.salary = salary;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String geFullName() {
+        return fullName;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        EmployeeDTO that = (EmployeeDTO) o;
+        return id == that.id &&
+                Double.compare(salary, that.salary) == 0 &&
+                Objects.equals(fullName, that.fullName) &&
+                Objects.equals(department, that.department);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, fullName, department, salary);
+    }
+
+    @Override
+    public String toString() {
+        return "EmployeeDTO{" +
+                "id=" + id +
+                ", fullName='" + fullName + '\'' +
+                ", department='" + department + '\'' +
+                ", salary=" + salary +
+                '}';
     }
 }
