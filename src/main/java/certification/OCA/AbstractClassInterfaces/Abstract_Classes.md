@@ -1,6 +1,6 @@
 # Abstract Classes
 
-> Classes which can be extended, but cannot be initialized
+> Classes which can be extended, but **CAN NOT** be initialized
 >
 > - Class Mammal is **abstract class**, and class Dog is concrete class
 
@@ -16,7 +16,7 @@ Mammal mammal = new Mammal(); //❌NOK!!
 
 ## Abstract Methods
 
-- marked with abstract keyword
+- marked with `abstract`keyword
 - don't have a body
 - the implementation (body) is done in classes which extend an abstract class
 
@@ -78,7 +78,7 @@ public class Dog extends Mammal{
 > - abstract classes can have constructors
 >   - but they can be called only using super() from the child class
 > - abstract class or method cannot be marked final `final means that the class/methods cannot be extended`
-> - abstract class or method cannot be marked private
+> - abstract class or method **cannot** be marked private
 > - static methods **cannot** be overriden
->   - therefore, abstract static is not allowed
+>    - therefore, abstract static is not allowed
 
