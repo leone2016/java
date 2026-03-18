@@ -216,7 +216,27 @@ public class Ford implement Car{
   }
 ```
 
+### Rules for using private Interface Methods
 
+1.  Marked with keyword private
+2. must have a body
+3. private static methods may be called by any method in the interface
+4. non-static private methods may be called only by non-static methods
+
+> Default and private non-static methods can call abstract methods
+
+```java
+
+public interface Car{
+    int getMaxSpeed();
+    int getHorsePower();
+    
+    //these methods are abstract and they have to be implemented => when you call printCarFeature() from a class which implements the interface, the implementation fiven in that class will be used in pri
+    default void printCarFeature(){
+        System.out.println("Max speed:"+ getMaxSpeed()+ " | Horse power: "+ getHorsePower()); 
+    }
+}
+```
 
 
 
