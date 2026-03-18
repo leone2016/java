@@ -231,7 +231,7 @@ public interface Car{
     int getMaxSpeed();
     int getHorsePower();
     
-    //these methods are abstract and they have to be implemented => when you call printCarFeature() from a class which implements the interface, the implementation fiven in that class will be used in pri
+    //these methods are abstract and they have to be implemented => when you call printCarFeature() from a class which implements the interface, the implementation fiven in that class will be used in printCarFeatures()
     default void printCarFeature(){
         System.out.println("Max speed:"+ getMaxSpeed()+ " | Horse power: "+ getHorsePower()); 
     }
