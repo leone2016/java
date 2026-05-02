@@ -1,5 +1,5 @@
 # 📝 Plantilla de Entrenamiento de Algoritmos
-
+> Inspiration https://github.com/ishaanbuildsthings/leetcode/blob/main/problems/Arrays%20and%20Hashing/1001%3A%20Grid%20Illumination.py
 ## 1️⃣ Leer y entender el problema
 - **Enunciado resumido (mis palabras):**
   > tengo que encriptar la data pero tengo que mover cada caracter dependienco de una llave

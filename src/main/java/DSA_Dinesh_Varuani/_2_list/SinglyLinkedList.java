@@ -13,7 +13,7 @@ public class SinglyLinkedList {
      *  - First node is head node.
      *  - Last node has data and points to null
      */
-    private ListNode head;
+    public ListNode head;
 
     public static class ListNode {
         private int data;
