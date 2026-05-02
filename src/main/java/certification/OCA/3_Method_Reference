@@ -1,0 +1,132 @@
+# Lambdas
+
+## Method Reference
+
+- Is a shorter way of writing lambda expression 
+
+```java
+@FunctionalInterface
+interface Animal{
+    public void speak(String s);
+}
+
+public class MyClass{
+    public static void shout(String s, Animal a){
+        a.speak(s);
+    }
+    
+    public static void main(String[] args){
+        //Animal myAnimal = s -> System.out.println(s);
+        Animal myAnimal = System.out::println
+        shout("Woof!", myAnimal);
+    }
+}
+```
+
+## Method Reference and context
+
+- Java already knows number of parameters of abstract method
+
+- so they are automatically inserted without the need of explicitly list them
+
+- for example:
+
+  `S -> System.out.println(s)` 
+
+  this lambda is implementing method speak(String s)
+
+- Java knows there is only one parameter in question
+
+- so you can just as well omit it and write it shorter:
+  `System.out::println`
+
+```java
+//using method reference with static method, e.g. Math.min()
+
+@FunctionalInterface
+interface Calculator{
+    public int minimun(int a, int b)
+}
+
+public class MyClass{
+    public static void main(String[] args){
+        Calculador lambda = (a,b)->Math.min(a,b);// EQUIVALENT
+        Calculator methodRef = Math::min;// EQUIVALENT
+        
+        System.out.println(lambda.minimun(-3,1));
+        System.out.println(lambda.minimun(-2,2));
+    }
+}
+```
+
+### Example
+
+```java
+@FuctionalInterface
+interface Calculator {
+    public double path(double t);
+}
+
+class Gravity{
+    public static double freeFall(double t){
+        final double g = 9.81;
+        return 0.5 * g * t*t;
+    }
+    public class MyClass{
+        public static void main(String[] args){
+            Calculator methodRef = Gravity::freeFall; // t -> Gravity.freeFall(t)
+            System.out.println(methodRef.path(10));
+        }
+    }
+}
+```
+
+### Calling method reference on an Object
+
+```java
+@FuctionalInterface
+interface Checker{
+    public boolean check();
+}
+
+public class MyClass{
+    public static void main(String[] args){
+        String s = "Leonardo Medina";
+        Checker methodRef = s::isEmpty;// () -> s.isEmpty(); 
+        System.out.println(methodRed.check())
+    }
+}
+```
+
+### Calling method reference on a parameter
+
+ ```java
+ @FunctionalInterface
+ interface Checker{
+     boolean check(String s);
+ }
+ 
+ public class MyClass{
+     public static void main(String[] args){
+         Checker methodRef = String::isBlank;// s -> s.isBlank();
+         System.out.println(methodRed.chech(" "));
+     }
+ }
+ ```
+
+### Calling construct reference
+
+```java
+@FuctionalInterface
+interface Teller{
+    String tellName(String name);
+}
+
+public class MyClass{
+    public static void main(String[] args){
+        Teller methodRef = String::new;// s -> new String
+        System.out.println(methodRef.tellName("John Wayne"));
+    }
+}
+```
+
